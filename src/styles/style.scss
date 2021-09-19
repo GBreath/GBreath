@@ -1,0 +1,49 @@
+@import "./themes/dark.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif !important;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  &.fade {
+    transition: background-color 0.3s;
+  }
+  svg {
+    color: #24242d !important;
+  }
+}
+
+svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  h2:first-child {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+[logo] {
+  font-family: "Fredoka One", cursive !important;
+}
