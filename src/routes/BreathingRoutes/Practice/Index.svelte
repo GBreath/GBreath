@@ -14,7 +14,6 @@
   }
 }
 .completed {
-  margin-top: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,7 +119,7 @@ import { userPreferences } from "@/utils/userPreferences";
 let currentAnimationDuration: number;
 let currentAnimation = "";
 let visualReturn = "";
-let isFinished = false;
+let isFinished = true;
 let alreadyRun = 0;
 let repeatTime = userPreferences.defaultBreathingRepeat;
 
