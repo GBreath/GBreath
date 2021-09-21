@@ -1,6 +1,7 @@
 interface IUserPreferences {
   theme: "dark" | "light";
   lang: "en" | "pt";
+  defaultBreathingRepeat?: number;
 }
 
 // Detect the user theme preference and apply to app default theme
@@ -29,12 +30,14 @@ if (!localStorage.getItem("user-preferences")) {
     JSON.stringify({
       theme: userThemePreference || "light",
       lang: userLangPreferences || "en",
+      defaultBreathingRepeat: 16,
     })
   );
 }
 
 const userPreferences = JSON.parse(
-  localStorage.getItem("user-preferences") || '{theme: "light", lang: "en"}'
+  localStorage.getItem("user-preferences") ||
+    '{theme: "light", lang: "en", defaultBreathingRepeat: 16}'
 ) as IUserPreferences;
 
 class changeUserPreference {
@@ -53,6 +56,10 @@ class changeUserPreference {
   }
   public lang(newLang: "pt" | "en") {
     userPreferences.lang = newLang;
+    this.saveChanges();
+  }
+  public defaultBreathingRepeat(newValue: number) {
+    userPreferences.defaultBreathingRepeat = newValue;
     this.saveChanges();
   }
   private saveChanges() {

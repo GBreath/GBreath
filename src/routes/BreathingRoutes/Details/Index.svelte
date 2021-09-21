@@ -40,6 +40,17 @@
     }
   }
 }
+.breathing-repetition-setting {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  gap: 8px;
+  input {
+    width: 100%;
+  }
+}
 </style>
 
 <script lang="ts">
@@ -47,10 +58,16 @@ import type RouteParams from "svelte-navigator/types/RouteParam";
 import { techniques } from "@/data/exercises";
 import { globalHistory } from "svelte-navigator";
 import BreathingTopbar from "../components/BreathingTopbar.svelte";
+import { ChangeUserPreference, userPreferences } from "@/utils/userPreferences";
 export let query: RouteParams;
 
 const idParam = query.id;
 const id = Number(idParam);
+let repeatTimes = userPreferences.defaultBreathingRepeat;
+
+function changeRepeatTimeAndSave() {
+  ChangeUserPreference.defaultBreathingRepeat(repeatTimes);
+}
 </script>
 
 <BreathingTopbar topbarLabel="Details" id="{id}" />
@@ -74,6 +91,17 @@ const id = Number(idParam);
       {/if}
     </ul>
     <br />
+    <br />
+    <div class="breathing-repetition-setting">
+      <input
+        type="range"
+        min="8"
+        max="120"
+        on:change="{() => changeRepeatTimeAndSave()}"
+        bind:value="{repeatTimes}" />
+      <span
+        >The breathing will repeat <strong>{repeatTimes}</strong> times.</span>
+    </div>
     <br />
     <div class="action-buttons">
       <button class="return" on:click="{() => globalHistory.navigate(`/`)}"

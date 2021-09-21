@@ -6,6 +6,9 @@
   padding: 16px;
   h2 {
     font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
