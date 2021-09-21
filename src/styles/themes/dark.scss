@@ -54,4 +54,15 @@ body.dark {
       filter: contrast(0.8) !important;
     }
   }
+  .sign-in-with-google {
+    color: #f4f4f4;
+    border-color: #ededed;
+  }
+  .input-container {
+    input,
+    select {
+      background: transparent;
+      color: #fff;
+    }
+  }
 }

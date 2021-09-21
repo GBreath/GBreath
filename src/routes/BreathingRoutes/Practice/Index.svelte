@@ -119,7 +119,7 @@ import { userPreferences } from "@/utils/userPreferences";
 let currentAnimationDuration: number;
 let currentAnimation = "";
 let visualReturn = "";
-let isFinished = true;
+let isFinished = false;
 let alreadyRun = 0;
 let repeatTime = userPreferences.defaultBreathingRepeat;
 
