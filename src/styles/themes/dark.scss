@@ -30,6 +30,13 @@ body.dark {
       }
     }
   }
+  .return-button {
+    background: #222 !important;
+    color: #fdfdfd;
+  }
+  .outside {
+    border-color: #222 !important;
+  }
   .streak-overview {
     background: #222222 !important;
     .separator {
@@ -37,6 +44,14 @@ body.dark {
     }
     small {
       color: #ececec !important;
+    }
+  }
+  button,
+  .button-like {
+    transition: filter 0.3s !important;
+    cursor: pointer;
+    &:hover {
+      filter: contrast(0.8) !important;
     }
   }
 }

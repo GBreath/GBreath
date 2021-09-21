@@ -47,7 +47,7 @@ import { globalHistory } from "svelte-navigator";
   <div class="breathing-exercises">
     {#each techniques as technique, index}
       <div
-        class="breathing-exercise-item"
+        class="breathing-exercise-item button-like"
         on:click="{() =>
           globalHistory.navigate(`/breathing/details/${index}`)}">
         {technique.name["en"]}

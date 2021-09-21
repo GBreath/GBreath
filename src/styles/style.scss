@@ -25,6 +25,14 @@ body {
   svg {
     color: #24242d !important;
   }
+  button,
+  .button-like {
+    transition: filter 0.3s !important;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(0.8) !important;
+    }
+  }
 }
 
 svg {
