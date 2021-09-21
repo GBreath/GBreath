@@ -6,6 +6,7 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s;
 }
 
 h1,
@@ -27,8 +28,8 @@ body {
 }
 
 svg {
-  width: 24px !important;
-  height: 24px !important;
+  width: 24px;
+  height: 24px;
 }
 
 .page {
@@ -44,6 +45,7 @@ svg {
   }
 }
 
-[logo] {
+.logo {
   font-family: "Fredoka One", cursive !important;
+  outline: 0;
 }

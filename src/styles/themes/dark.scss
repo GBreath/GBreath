@@ -1,7 +1,42 @@
 body.dark {
   background: #191a1b;
   color: #f4f4f4;
+  &.fade {
+    transition: background-color 0.3s;
+  }
+  .logo {
+    color: #fff !important;
+  }
   svg {
     color: #cdcdcd !important;
+  }
+  .breathing-exercises-container {
+    background: #222222 !important;
+    h3 {
+      color: #fff !important;
+    }
+    .breathing-exercise-item {
+      background: #2a2b2c !important;
+    }
+  }
+  .breathing-topbar h2 {
+    color: #fff;
+  }
+  .breathing-details {
+    .action-buttons {
+      button {
+        background: #222 !important;
+        color: #fdfdfd;
+      }
+    }
+  }
+  .streak-overview {
+    background: #222222 !important;
+    .separator {
+      border-color: #f4f4f4 !important;
+    }
+    small {
+      color: #ececec !important;
+    }
   }
 }

@@ -6,6 +6,8 @@ header {
   padding: 16px;
   h1 {
     font-size: 24px;
+    cursor: pointer;
+    user-select: none;
   }
   button {
     display: grid;
@@ -18,19 +20,24 @@ header {
 </style>
 
 <script lang="ts">
-import { ChangeUserPreference } from "@/utils/userPreferences";
+import { ChangeUserPreference, userPreferences } from "@/utils/userPreferences";
 
 import Icon from "@iconify/svelte";
-import { Link } from "svelte-navigator";
+import { Link, globalHistory } from "svelte-navigator";
 
 let isDark = true;
 
+if (userPreferences.theme === "light") {
+  isDark = false;
+}
+
 function changeTheme() {
-  isDark = !isDark;
   if (isDark) {
     ChangeUserPreference.theme("light");
+    isDark = false;
   } else {
     ChangeUserPreference.theme("dark");
+    isDark = true;
   }
 }
 </script>
@@ -39,11 +46,12 @@ function changeTheme() {
   <Link to="/settings">
     <Icon icon="bx:bxs-cog" />
   </Link>
-  <h1>GBreath</h1>
-  <button on:click="{changeTheme}">
-    {#if !isDark}
+  <h1 class="logo" on:click="{() => globalHistory.navigate('/')}">GBreath</h1>
+  <button on:click="{() => changeTheme()}">
+    {#if isDark}
       <Icon icon="bx:bxs-sun" />
-    {:else}
+    {/if}
+    {#if !isDark}
       <Icon icon="bx:bxs-moon" />
     {/if}
   </button>
