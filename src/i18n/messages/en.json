@@ -35,6 +35,7 @@
     }
   },
   "settings": {
+    "settings": "Settings",
     "sync_your_data_with_google": "Sync your data with google",
     "set_your_breathing_streak_goal": "Set your breathing streak goal",
     "set_here_your_streak_goal": "Set here your streak goal",
