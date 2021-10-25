@@ -117,6 +117,13 @@ import { techniques } from "@/data/exercises";
 import { globalHistory } from "svelte-navigator";
 import { userPreferences } from "@/utils/userPreferences";
 import { _ } from "svelte-i18n";
+import {
+  exhaleVibrate,
+  finishVibrate,
+  holdVibrate,
+  inhaleVibrate,
+} from "@/data/vibrate";
+import { onDestroy, onMount } from "svelte";
 
 let currentAnimationDuration: number;
 let currentAnimation = "";
@@ -131,13 +138,15 @@ interface IBreathingStep {
   nextStep(): void;
 }
 
+var stepTimer = setInterval(() => {}, 1000);
+
 function breathingStep({ stepTime, prefixText, nextStep }: IBreathingStep) {
   let stepTimerCounter = stepTime;
   currentAnimationDuration = stepTime;
   visualReturn = `${prefixText} ${stepTimerCounter}`;
   if (!isFinished) {
     if (stepTime !== 0) {
-      const stepTimer = setInterval(() => {
+      stepTimer = setInterval(() => {
         stepTimerCounter--;
         visualReturn = `${prefixText} ${stepTimerCounter}`;
         if (stepTimerCounter <= 0) {
@@ -151,7 +160,13 @@ function breathingStep({ stepTime, prefixText, nextStep }: IBreathingStep) {
   }
 }
 
-startBreathing();
+onMount(() => {
+  startBreathing();
+});
+
+onDestroy(() => {
+  clearInterval(stepTimer);
+});
 
 function startBreathing() {
   currentAnimation = "";
@@ -162,6 +177,7 @@ function startBreathing() {
   });
 }
 function inhale() {
+  navigator.vibrate(inhaleVibrate);
   currentAnimation = "inhale";
   breathingStep({
     stepTime: techniques[id].steps[0],
@@ -170,6 +186,7 @@ function inhale() {
   });
 }
 function hold() {
+  navigator.vibrate(holdVibrate);
   currentAnimation = "hold";
   breathingStep({
     stepTime: techniques[id].steps[1],
@@ -178,6 +195,7 @@ function hold() {
   });
 }
 function exhale() {
+  navigator.vibrate(exhaleVibrate);
   currentAnimation = "exhale";
   breathingStep({
     stepTime: techniques[id].steps[2],
@@ -186,6 +204,7 @@ function exhale() {
   });
 }
 function rest() {
+  navigator.vibrate(holdVibrate);
   currentAnimation = "";
   breathingStep({
     stepTime: techniques[id].steps[3],
@@ -194,7 +213,9 @@ function rest() {
   });
   alreadyRun++;
   if (alreadyRun === repeatTime) {
+    navigator.vibrate(finishVibrate);
     isFinished = true;
+    clearInterval(stepTimer);
   }
 }
 </script>
