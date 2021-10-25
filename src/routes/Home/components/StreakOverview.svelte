@@ -29,14 +29,18 @@
 }
 </style>
 
+<script lang="ts">
+  import { _ } from "svelte-i18n"
+</script>
+
 <section class="streak-overview">
   <div class="streak-overview-item">
-    <small>YOUR STREAK</small>
-    <p>10 Days</p>
+    <small>{$_("home.streak.YOURSTREAK")}</small>
+    <p>10 {$_("home.streak.Days")}</p>
   </div>
   <div class="separator"></div>
   <div class="streak-overview-item">
-    <small>YOUR GOAL</small>
-    <p>90 Days</p>
+    <small>{$_("home.streak.YOURGOAL")}</small>
+    <p>90 {$_("home.streak.Days")}</p>
   </div>
 </section>

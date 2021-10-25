@@ -40,6 +40,7 @@
 import { techniques } from "@/data/exercises";
 import Icon from "@iconify/svelte";
 import { globalHistory } from "svelte-navigator";
+import { locale } from "svelte-i18n"
 </script>
 
 <section class="breathing-exercises-container">
@@ -50,7 +51,7 @@ import { globalHistory } from "svelte-navigator";
         class="breathing-exercise-item button-like"
         on:click="{() =>
           globalHistory.navigate(`/breathing/details/${index}`)}">
-        {technique.name["en"]}
+        {technique.name[$locale]}
         <Icon
           icon="carbon:arrow-right"
           style="width: 21px !important; height: 21px !important;" />

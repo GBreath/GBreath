@@ -1,0 +1,13 @@
+{
+  "hello_world": "Olá mundo",
+  "home": {
+    "streak": {
+      "YOURSTREAK": "SEU PROGRESSO",
+      "YOURGOAL": "SEU OBJETIVO",
+      "Days": "Dias"
+    },
+    "content": {
+      "find_a_breathing_exercise_to_practice": "Encontre um exercício de respiração para praticar"
+    }
+  }
+}

@@ -19,10 +19,11 @@ import Icon from "@iconify/svelte";
 import { Link } from "svelte-navigator";
 export let id: number;
 export let topbarLabel: "Details" | "Practice";
+import { locale } from "svelte-i18n"
 </script>
 
 <header class="breathing-topbar">
-  <h2>{techniques[id].name["en"]} - {topbarLabel}</h2>
+  <h2>{techniques[id].name[$locale]} - {topbarLabel}</h2>
   <Link to="{topbarLabel === 'Details' ? '/' : `/breathing/details/${id}`}">
     <Icon
       icon="entypo:chevron-small-left"

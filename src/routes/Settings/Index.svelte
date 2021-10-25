@@ -58,6 +58,20 @@
 import Icon from "@iconify/svelte";
 import { Link } from "svelte-navigator";
 import SettingsTopbar from "./components/SettingsTopbar.svelte";
+import { userPreferences, ChangeUserPreference } from "@/utils/userPreferences";
+import { locale } from "svelte-i18n"
+
+let langPref = 'pt'
+  
+function changeLang(e) {
+  langPref = e.target.value
+  ChangeUserPreference.lang(e.target.value)
+  locale.set(e.target.value)
+}
+
+$: {
+  langPref = userPreferences.lang
+}
 </script>
 
 <SettingsTopbar />
@@ -90,7 +104,7 @@ import SettingsTopbar from "./components/SettingsTopbar.svelte";
   <small>Not working yet!</small>
   <br />
   <div class="input-container">
-    <select>
+    <select on:change="{(e) => changeLang(e)}" bind:value="{langPref}">
       <option value="en">English</option>
       <option value="pt">Português</option>
     </select>

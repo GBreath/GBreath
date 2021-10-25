@@ -59,6 +59,7 @@ import { techniques } from "@/data/exercises";
 import { globalHistory } from "svelte-navigator";
 import BreathingTopbar from "../components/BreathingTopbar.svelte";
 import { ChangeUserPreference, userPreferences } from "@/utils/userPreferences";
+import { locale } from "svelte-i18n"
 export let query: RouteParams;
 
 const idParam = query.id;
@@ -73,8 +74,8 @@ function changeRepeatTimeAndSave() {
 <BreathingTopbar topbarLabel="Details" id="{id}" />
 <div class="breathing-details-page">
   <section class="breathing-details">
-    <h3>What is {techniques[id].name["en"]}?</h3>
-    <p>{techniques[id].description["en"]}</p>
+    <h3>What is {techniques[id].name[$locale]}?</h3>
+    <p>{techniques[id].description[$locale]}</p>
     <br />
     <ul class="steps">
       {#if techniques[id].steps[0] > 0}

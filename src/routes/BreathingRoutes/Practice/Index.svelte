@@ -116,6 +116,7 @@ const id = Number(idParam);
 import { techniques } from "@/data/exercises";
 import { globalHistory } from "svelte-navigator";
 import { userPreferences } from "@/utils/userPreferences";
+
 let currentAnimationDuration: number;
 let currentAnimation = "";
 let visualReturn = "";

@@ -1,0 +1,13 @@
+{
+  "hello_world": "Hello world",
+  "home": {
+    "streak": {
+      "YOURSTREAK": "YOUR STREAK",
+      "YOURGOAL": "YOUR GOAL",
+      "Days": "Days"
+    },
+    "content": {
+      "find_a_breathing_exercise_to_practice": "Find a breathing exercise to practice"
+    }
+  }
+}
