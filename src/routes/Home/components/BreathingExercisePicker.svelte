@@ -12,6 +12,7 @@
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 24px;
+    text-align: center;
   }
   .breathing-exercises {
     width: 100%;
@@ -40,11 +41,11 @@
 import { techniques } from "@/data/exercises";
 import Icon from "@iconify/svelte";
 import { globalHistory } from "svelte-navigator";
-import { locale } from "svelte-i18n"
+import { locale, _ } from "svelte-i18n";
 </script>
 
 <section class="breathing-exercises-container">
-  <h3>Find a breathing exercise to practice</h3>
+  <h3>{$_("home.content.find_a_breathing_exercise_to_practice")}</h3>
   <div class="breathing-exercises">
     {#each techniques as technique, index}
       <div

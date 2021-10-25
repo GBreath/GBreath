@@ -59,7 +59,7 @@ import { techniques } from "@/data/exercises";
 import { globalHistory } from "svelte-navigator";
 import BreathingTopbar from "../components/BreathingTopbar.svelte";
 import { ChangeUserPreference, userPreferences } from "@/utils/userPreferences";
-import { locale } from "svelte-i18n"
+import { locale, _ } from "svelte-i18n";
 export let query: RouteParams;
 
 const idParam = query.id;
@@ -74,21 +74,33 @@ function changeRepeatTimeAndSave() {
 <BreathingTopbar topbarLabel="Details" id="{id}" />
 <div class="breathing-details-page">
   <section class="breathing-details">
-    <h3>What is {techniques[id].name[$locale]}?</h3>
+    <h3>{$_("breathing.details.what_is")} {techniques[id].name[$locale]}?</h3>
     <p>{techniques[id].description[$locale]}</p>
     <br />
     <ul class="steps">
       {#if techniques[id].steps[0] > 0}
-        <li>&#8226; Inhale for {techniques[id].steps[0]}s;</li>
+        <li>
+          &#8226; {$_("breathing.details.inhale_for")}
+          {techniques[id].steps[0]}s;
+        </li>
       {/if}
       {#if techniques[id].steps[1] > 0}
-        <li>&#8226; Hold for {techniques[id].steps[1]}s;</li>
+        <li>
+          &#8226; {$_("breathing.details.hold_for")}
+          {techniques[id].steps[1]}s;
+        </li>
       {/if}
       {#if techniques[id].steps[2] > 0}
-        <li>&#8226; Exhale for {techniques[id].steps[2]}s;</li>
+        <li>
+          &#8226; {$_("breathing.details.exhale_for")}
+          {techniques[id].steps[2]}s;
+        </li>
       {/if}
       {#if techniques[id].steps[3] > 0}
-        <li>&#8226; Take a rest for {techniques[id].steps[3]}s;</li>
+        <li>
+          &#8226; {$_("breathing.details.take_a_rest_for")}
+          {techniques[id].steps[3]}s;
+        </li>
       {/if}
     </ul>
     <br />
@@ -101,16 +113,18 @@ function changeRepeatTimeAndSave() {
         on:change="{() => changeRepeatTimeAndSave()}"
         bind:value="{repeatTimes}" />
       <span
-        >The breathing will repeat <strong>{repeatTimes}</strong> times.</span>
+        >{$_("breathing.details.the_breathing_will_repeat")}
+        <strong>{repeatTimes}</strong>
+        {$_("breathing.details.times")}.</span>
     </div>
     <br />
     <div class="action-buttons">
       <button class="return" on:click="{() => globalHistory.navigate(`/`)}"
-        >Return</button>
+        >{$_("breathing.details.return")}</button>
       <button
         class="start"
         on:click="{() => globalHistory.navigate(`/breathing/practice/${id}`)}"
-        >Start Practice</button>
+        >{$_("breathing.details.start_practice")}</button>
     </div>
   </section>
 </div>

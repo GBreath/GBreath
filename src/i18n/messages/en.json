@@ -9,5 +9,37 @@
     "content": {
       "find_a_breathing_exercise_to_practice": "Find a breathing exercise to practice"
     }
+  },
+  "breathing": {
+    "details": {
+      "what_is": "What is",
+      "inhale_for": "Inhale for",
+      "hold_for": "Hold for",
+      "exhale_for": "Exhale for",
+      "take_a_rest_for": "Take a rest for",
+      "the_breathing_will_repeat": "The breathing will repeat",
+      "times": "times",
+      "return": "Return",
+      "start_practice": "Start Practice"
+    },
+    "practice": {
+      "breaths_to_go": "breaths to go",
+      "return_to_see_other_breathings": "Return to see other Breathings",
+      "your_breathing_session_is_complete": "Your breathing session is complete",
+      "i_hope_you_are_feeling_better": "I hope you are feeling better",
+      "inhale_for": "Inhale for",
+      "hold_for": "Hold for",
+      "exhale_for": "Exhale for",
+      "take_a_rest_for": "Take a rest for",
+      "breathing_starting_in": "Breathing starting in"
+    }
+  },
+  "settings": {
+    "sync_your_data_with_google": "Sync your data with google",
+    "set_your_breathing_streak_goal": "Set your breathing streak goal",
+    "set_here_your_streak_goal": "Set here your streak goal",
+    "not_working_yet": "Not working yet",
+    "numbers_of_days": "Numbers of days",
+    "change_your_app_language": "Change your app language"
   }
 }

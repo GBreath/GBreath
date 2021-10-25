@@ -15,6 +15,6 @@ import StreakOverview from "./components/StreakOverview.svelte";
 
 <HomeTopbar />
 <div class="home-content">
-  <StreakOverview />
+  <!-- <StreakOverview /> -->
   <BreathingExercisePicker />
 </div>

@@ -59,49 +59,52 @@ import Icon from "@iconify/svelte";
 import { Link } from "svelte-navigator";
 import SettingsTopbar from "./components/SettingsTopbar.svelte";
 import { userPreferences, ChangeUserPreference } from "@/utils/userPreferences";
-import { locale } from "svelte-i18n"
+import { locale, _ } from "svelte-i18n";
 
-let langPref = 'pt'
-  
-function changeLang(e) {
-  langPref = e.target.value
-  ChangeUserPreference.lang(e.target.value)
-  locale.set(e.target.value)
+let langPref = "pt";
+
+function changeLang(e: Event) {
+  langPref = (e.target as HTMLInputElement).value;
+  ChangeUserPreference.lang(
+    (e.target as HTMLInputElement).value as "pt" | "en"
+  );
+  locale.set((e.target as HTMLInputElement).value);
 }
 
 $: {
-  langPref = userPreferences.lang
+  langPref = userPreferences.lang;
 }
 </script>
 
 <SettingsTopbar />
 <div class="settings-page">
-  <button
-    class="sign-in-with-google"
-    on:click="{() => alert('Not working yet!')}">
-    <Icon
-      icon="flat-color-icons:google"
-      style="width: 32px !important; height: 32px !important;" />
-    Sync your data with google
-  </button>
-  <br />
-  <br />
-  <h3>Set your breathing streak goal</h3>
-  <small>Not working yet!</small>
-  <br />
-  <div class="input-container">
-    <input
-      type="number"
-      name="goal"
-      id="goal"
-      min="0"
-      placeholder="Set here your streak goal" />
-    <div>Numbers of days</div>
-  </div>
-  <br />
-  <br />
-  <h3>Change your app language</h3>
-  <small>Not working yet!</small>
+  {#if false}
+    <button
+      class="sign-in-with-google"
+      on:click="{() => alert(`${$_('settings.not_working_yet')}!`)}">
+      <Icon
+        icon="flat-color-icons:google"
+        style="width: 32px !important; height: 32px !important;" />
+      {$_("settings.sync_your_data_with_google")}
+    </button>
+    <br />
+    <br />
+    <h3>{$_("settings.set_your_breathing_streak_goal")}</h3>
+    <small>{$_("settings.not_working_yet")}!</small>
+    <br />
+    <div class="input-container">
+      <input
+        type="number"
+        name="goal"
+        id="goal"
+        min="0"
+        placeholder="{$_('settings.set_here_your_streak_goal')}" />
+      <div>{$_("settings.numbers_of_days")}</div>
+    </div>
+    <br />
+    <br />
+  {/if}
+  <h3>{$_("settings.change_your_app_language")}</h3>
   <br />
   <div class="input-container">
     <select on:change="{(e) => changeLang(e)}" bind:value="{langPref}">

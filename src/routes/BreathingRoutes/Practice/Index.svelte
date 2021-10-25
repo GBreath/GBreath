@@ -116,6 +116,7 @@ const id = Number(idParam);
 import { techniques } from "@/data/exercises";
 import { globalHistory } from "svelte-navigator";
 import { userPreferences } from "@/utils/userPreferences";
+import { _ } from "svelte-i18n";
 
 let currentAnimationDuration: number;
 let currentAnimation = "";
@@ -156,7 +157,7 @@ function startBreathing() {
   currentAnimation = "";
   breathingStep({
     stepTime: 5,
-    prefixText: `Breathing starting in`,
+    prefixText: $_("breathing.practice.breathing_starting_in"),
     nextStep: inhale,
   });
 }
@@ -164,7 +165,7 @@ function inhale() {
   currentAnimation = "inhale";
   breathingStep({
     stepTime: techniques[id].steps[0],
-    prefixText: `Inhale for`,
+    prefixText: $_("breathing.practice.inhale_for"),
     nextStep: hold,
   });
 }
@@ -172,7 +173,7 @@ function hold() {
   currentAnimation = "hold";
   breathingStep({
     stepTime: techniques[id].steps[1],
-    prefixText: `Hold for`,
+    prefixText: $_("breathing.practice.hold_for"),
     nextStep: exhale,
   });
 }
@@ -180,7 +181,7 @@ function exhale() {
   currentAnimation = "exhale";
   breathingStep({
     stepTime: techniques[id].steps[2],
-    prefixText: `Exhale for`,
+    prefixText: $_("breathing.practice.exhale_for"),
     nextStep: rest,
   });
 }
@@ -188,7 +189,7 @@ function rest() {
   currentAnimation = "";
   breathingStep({
     stepTime: techniques[id].steps[3],
-    prefixText: `Take a rest for`,
+    prefixText: $_("breathing.practice.take_a_rest_for"),
     nextStep: inhale,
   });
   alreadyRun++;
@@ -202,7 +203,10 @@ function rest() {
 <div class="breathing-practice-page">
   {#if !isFinished}
     <section class="breathing-practice">
-      <h3><strong>{repeatTime - alreadyRun}</strong> breaths to go</h3>
+      <h3>
+        <strong>{repeatTime - alreadyRun}</strong>
+        {$_("breathing.practice.breaths_to_go")}
+      </h3>
       <br />
       <div class="outside">
         <div
@@ -216,14 +220,19 @@ function rest() {
       <button
         class="return-button"
         on:click="{() => globalHistory.navigate('/')}"
-        >Return to see other Breathings</button>
+        >{$_("breathing.practice.return_to_see_other_breathings")}</button>
     </section>
   {/if}
   {#if isFinished}
     <section class="completed">
-      <h3><strong>Your breathing session is complete!</strong></h3>
+      <h3>
+        <strong
+          >{$_(
+            "breathing.practice.your_breathing_session_is_complete"
+          )}!</strong>
+      </h3>
       <br />
-      <p>I hope you are feeling better.</p>
+      <p>{$_("breathing.practice.i_hope_you_are_feeling_better")}.</p>
       <svg
         id="ee370ff1-147c-4ceb-b530-4ba4072ed128"
         data-name="Layer 1"
@@ -322,7 +331,7 @@ function rest() {
       <button
         class="return-button"
         on:click="{() => globalHistory.navigate('/')}"
-        >Return to see other Breathings</button>
+        >{$_("breathing.practice.return_to_see_other_breathings")}</button>
     </section>
   {/if}
 </div>

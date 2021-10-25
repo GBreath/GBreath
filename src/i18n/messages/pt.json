@@ -7,7 +7,40 @@
       "Days": "Dias"
     },
     "content": {
-      "find_a_breathing_exercise_to_practice": "Encontre um exercício de respiração para praticar"
+      "find_a_breathing_exercise_to_practice": "Encontre um exercicio de respiração para praticar"
     }
+  },
+  "breathing": {
+    "details": {
+      "what_is": "Oque é",
+      "inhale_for": "Inspire por",
+      "hold_for": "Segure por",
+      "exhale_for": "Espire por",
+      "take_a_rest_for": "Tenha um descanso",
+      "the_breathing_will_repeat": "A respiração vai repetir",
+      "times": "vezes",
+      "return": "Retornar",
+      "start_practice": "Começar a prática"
+    },
+    "practice": {
+      "breaths_to_go": "repirações restantes",
+      "return_to_see_other_breathings": "Retorne e veja outras respirações",
+      "your_breathing_session_is_complete": "Seu sessão de respiração está completa",
+      "i_hope_you_are_feeling_better": "Eu espero que esteja se sentindo melhor",
+      "inhale_for": "Inspire por",
+      "hold_for": "Segure por",
+      "exhale_for": "Espire por",
+      "take_a_rest_for": "Tenha um descanso",
+      "breathing_starting_in": "Respiração começando em"
+    }
+  },
+  "settings": {
+    "settings": "Configurações",
+    "sync_your_data_with_google": "Sincronize seus dados com o Google",
+    "set_your_breathing_streak_goal": "Defina seu objetivo de prática",
+    "set_here_your_streak_goal": "Defina aqui seu objetivo",
+    "not_working_yet": "Ainda não está funcionando",
+    "numbers_of_days": "Numero de dias",
+    "change_your_app_language": "Mude o idioma do seu app"
   }
 }

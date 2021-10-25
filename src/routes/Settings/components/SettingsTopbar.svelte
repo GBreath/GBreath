@@ -16,11 +16,12 @@
 
 <script lang="ts">
 import Icon from "@iconify/svelte";
+import { _ } from "svelte-i18n";
 import { Link } from "svelte-navigator";
 </script>
 
 <header class="settings-topbar">
-  <h2>Settings</h2>
+  <h2>{$_("settings.settings")}</h2>
   <Link to="/">
     <Icon
       icon="entypo:chevron-small-left"
