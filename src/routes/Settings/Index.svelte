@@ -160,11 +160,11 @@ $: {
   </div>
   <br />
   <div class="switch-container">
-    <label for="allow-vibration">{$_("settings.enable_dark_mode")}</label>
+    <label for="enable-dark-mode">{$_("settings.enable_dark_mode")}</label>
     <label class="switch">
       <input
         type="checkbox"
-        id="allow-vibration"
+        id="enable-dark-mode"
         on:change="{(e) => changeTheme()}"
         bind:checked="{enableDarkMode}" />
       <span class="slider round"></span>
