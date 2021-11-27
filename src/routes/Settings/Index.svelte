@@ -17,6 +17,23 @@
     font-size: 18px;
     filter: none !important;
   }
+  .switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(480px, 100% - 32px);
+    height: 60px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #666;
+    label {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
   .input-container {
     height: 45px;
     width: min(480px, 100% - 32px);
@@ -56,12 +73,13 @@
 
 <script lang="ts">
 import Icon from "@iconify/svelte";
-import { Link } from "svelte-navigator";
 import SettingsTopbar from "./components/SettingsTopbar.svelte";
 import { userPreferences, ChangeUserPreference } from "@/utils/userPreferences";
 import { locale, _ } from "svelte-i18n";
 
 let langPref = "pt";
+let allowVibration = false;
+let enableDarkMode = false;
 
 function changeLang(e: Event) {
   langPref = (e.target as HTMLInputElement).value;
@@ -71,8 +89,24 @@ function changeLang(e: Event) {
   locale.set((e.target as HTMLInputElement).value);
 }
 
+function changeVibration() {
+  allowVibration = !allowVibration;
+  ChangeUserPreference.vibration(allowVibration);
+}
+
+function changeTheme() {
+  enableDarkMode = !enableDarkMode;
+  if (enableDarkMode) {
+    ChangeUserPreference.theme("dark");
+  } else {
+    ChangeUserPreference.theme("light");
+  }
+}
+
 $: {
   langPref = userPreferences.lang;
+  allowVibration = userPreferences.vibration;
+  enableDarkMode = userPreferences.theme === "dark" ? true : false;
 }
 </script>
 
@@ -111,5 +145,29 @@ $: {
       <option value="en">English</option>
       <option value="pt">Português</option>
     </select>
+  </div>
+  <br />
+  <div class="switch-container">
+    <label for="allow-vibration">{$_("settings.allow_vibration")}</label>
+    <label class="switch">
+      <input
+        type="checkbox"
+        id="allow-vibration"
+        on:change="{(e) => changeVibration()}"
+        bind:checked="{allowVibration}" />
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <br />
+  <div class="switch-container">
+    <label for="allow-vibration">{$_("settings.enable_dark_mode")}</label>
+    <label class="switch">
+      <input
+        type="checkbox"
+        id="allow-vibration"
+        on:change="{(e) => changeTheme()}"
+        bind:checked="{enableDarkMode}" />
+      <span class="slider round"></span>
+    </label>
   </div>
 </div>

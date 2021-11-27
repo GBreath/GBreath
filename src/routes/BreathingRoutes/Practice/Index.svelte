@@ -177,7 +177,9 @@ function startBreathing() {
   });
 }
 function inhale() {
-  navigator.vibrate(inhaleVibrate);
+  if (userPreferences.vibration) {
+    navigator.vibrate(inhaleVibrate);
+  }
   currentAnimation = "inhale";
   breathingStep({
     stepTime: techniques[id].steps[0],
@@ -186,7 +188,9 @@ function inhale() {
   });
 }
 function hold() {
-  navigator.vibrate(holdVibrate);
+  if (userPreferences.vibration) {
+    navigator.vibrate(holdVibrate);
+  }
   currentAnimation = "hold";
   breathingStep({
     stepTime: techniques[id].steps[1],
@@ -195,7 +199,9 @@ function hold() {
   });
 }
 function exhale() {
-  navigator.vibrate(exhaleVibrate);
+  if (userPreferences.vibration) {
+    navigator.vibrate(exhaleVibrate);
+  }
   currentAnimation = "exhale";
   breathingStep({
     stepTime: techniques[id].steps[2],
@@ -204,7 +210,9 @@ function exhale() {
   });
 }
 function rest() {
-  navigator.vibrate(holdVibrate);
+  if (userPreferences.vibration) {
+    navigator.vibrate(holdVibrate);
+  }
   currentAnimation = "";
   breathingStep({
     stepTime: techniques[id].steps[3],

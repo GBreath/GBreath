@@ -41,6 +41,8 @@
     "set_here_your_streak_goal": "Set here your streak goal",
     "not_working_yet": "Not working yet",
     "numbers_of_days": "Numbers of days",
-    "change_your_app_language": "Change your app language"
+    "change_your_app_language": "Change your app language",
+    "allow_vibration": "Allow vibration feedback",
+    "enable_dark_mode": "Enable dark mode"
   }
 }

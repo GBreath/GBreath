@@ -2,6 +2,7 @@ interface IUserPreferences {
   theme: "dark" | "light";
   lang: "en" | "pt";
   defaultBreathingRepeat?: number;
+  vibration: boolean;
 }
 
 // Detect the user theme preference and apply to app default theme
@@ -31,13 +32,14 @@ if (!localStorage.getItem("user-preferences")) {
       theme: userThemePreference || "light",
       lang: userLangPreferences || "en",
       defaultBreathingRepeat: 16,
+      vibration: true,
     })
   );
 }
 
 const userPreferences = JSON.parse(
   localStorage.getItem("user-preferences") ||
-    '{theme: "light", lang: "en", defaultBreathingRepeat: 16}'
+    '{theme: "light", lang: "en", defaultBreathingRepeat: 16, vibration: true}'
 ) as IUserPreferences;
 
 class changeUserPreference {
@@ -60,6 +62,10 @@ class changeUserPreference {
   }
   public defaultBreathingRepeat(newValue: number) {
     userPreferences.defaultBreathingRepeat = newValue;
+    this.saveChanges();
+  }
+  public vibration(newValue: boolean) {
+    userPreferences.vibration = newValue;
     this.saveChanges();
   }
   private saveChanges() {
