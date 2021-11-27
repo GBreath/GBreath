@@ -1,48 +1,74 @@
-# Svelte + TS + Vite
+<h1 align="center">
+  GBreath
+</h1>
+<div align="center">
+  <img src="https://img.shields.io/static/v1?label=License&message=GPL-3&color=51FF96&labelColor=3F454B" alt="GPL-3 License">
+  &#8205;&#8205;
+  <img src="https://img.shields.io/static/v1?label=Version&message=1.2&color=51FF96&labelColor=51FF96" alt="Version 1.0">
+  &#8205;&#8205;
+  <img src="https://img.shields.io/static/v1?label=Open&message=Source&color=3F454B&labelColor=51FF96" alt="Open Source" />
+</div>
+<h2>About Project</h2>
+<p>GBreath is a open source project to help you on your breathing practice.</p>
+<h3>Project goals</h3>
+<ul>
+  <li>Make a good Website</li>
+  <li>Make it free for everyone</li>
+</ul>
+<h2>About Website</h2>
+<p>The website is developed focused on offline first and mobile first</p>
+<h3>Features</h3>
+<ul>
+  <li>
+    <a href="https://vitejs.dev">
+      <img align="center" alt="ViteJs" height="20" width="30" src="https://raw.githubusercontent.com/vitejs/docs-cn/main/public/logo.svg">
+      ViteJS
+    </a>
+  </li>
+  <li>
+    <a href="https://svelte.dev/">
+      <img align="center" alt="SvelteJs" height="20" width="30" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg">
+      SvelteJS
+    </a>
+  </li>
+  <li>
+    <a href="https://typescriptlang.org/">
+      <img align="center" alt="Typescript" height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+      Typescript
+    </a>
+  </li>
+  <li>
+    <a href="https://sass-lang.com/">
+      <img align="center" alt="Sass" height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg">
+      Scss/Sass
+    </a>
+  </li>
+  <li>
+    <a href="https://web.dev/progressive-web-apps/?gclid=Cj0KCQjwraqHBhDsARIsAKuGZeFpqL8YYq3kD8tuSbLLn9nY_QMkr0fQFMrC98U_s3pS-YH3g1ZanRAaAq8YEALw_wcB">
+      <img align="center" alt="PWA" height="20" width="30" src="https://raw.githubusercontent.com/webmaxru/progressive-web-apps-logo/77744cd5c0a4d484bb3d082c6ac458c44202da03/pwalogo.svg">
+      Progressive Web App
+    </a>
+  </li>
+  <li>
+    <a href="https://iconify.design/">
+      <img align="center" alt="Iconify" width="30" src="https://avatars.githubusercontent.com/u/50354982?v=4">
+      Iconify
+    </a>
+  </li>
+  <li>
+    <a href="https://prettier.io/">
+      <img align="center" alt="Prettier" width="30" src="https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-avatar-dark.svg">
+      Prettier
+    </a>
+  </li>
+  <li>
+    <a href="https://www.netlify.com/">
+      <img align="center" alt="Netlify" width="30" src="https://camo.githubusercontent.com/c8a3dd0309eabdf69cf932a8450e2711307502a47703c54024f4678c41d497ba/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f70726573732f6c6f676f732f6c6f676f6d61726b2e706e67">
+      Netlify
+    </a>
+  </li>
+</ul>
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+<h3>Deploy Status</h3>
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
-
-## Need an official Svelte framework?
-
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
-
-## Technical considerations
-
-**Why use this over SvelteKit?**
-
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
-
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from "svelte/store";
-export default writable(0);
-```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1e897c4-936e-4103-8755-8fb1c9290ec2/deploy-status)](https://app.netlify.com/sites/gbreath/deploys)
