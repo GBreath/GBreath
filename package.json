@@ -32,6 +32,6 @@
     "cssnano": "^5.0.8"
   },
   "dependencies": {
-    "svelte-i18n": "^3.3.13"
+    "svelte-i18n": "^3.4.0"
   }
 }
