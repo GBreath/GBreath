@@ -30,7 +30,7 @@
 </style>
 
 <script lang="ts">
-  import { _ } from "svelte-i18n"
+import { _ } from "svelte-i18n";
 </script>
 
 <section class="streak-overview">

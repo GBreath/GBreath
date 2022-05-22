@@ -19,7 +19,7 @@ import Icon from "@iconify/svelte";
 import { Link } from "svelte-navigator";
 export let id: number;
 export let topbarLabel: "Details" | "Practice";
-import { locale } from "svelte-i18n"
+import { locale } from "svelte-i18n";
 </script>
 
 <header class="breathing-topbar">
