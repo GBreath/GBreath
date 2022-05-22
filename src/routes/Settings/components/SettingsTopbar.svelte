@@ -14,7 +14,7 @@
 }
 </style>
 
-<script lang="ts">
+<script type="ts">
 import Icon from "@iconify/svelte";
 import { _ } from "svelte-i18n";
 import { Link } from "svelte-navigator";

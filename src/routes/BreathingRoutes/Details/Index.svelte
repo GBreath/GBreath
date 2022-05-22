@@ -103,6 +103,22 @@ function changeRepeatTimeAndSave() {
         </li>
       {/if}
     </ul>
+    <script type="text/javascript">
+    atOptions = {
+      key: "e79c7b08eac11ce7ca416ad5fd9b499c",
+      format: "iframe",
+      height: 250,
+      width: 300,
+      params: {},
+    };
+    document.write(
+      "<scr" +
+        'ipt type="text/javascript" src="http' +
+        (location.protocol === "https:" ? "s" : "") +
+        '://www.effectivedisplayformats.com/e79c7b08eac11ce7ca416ad5fd9b499c/invoke.js"></scr' +
+        "ipt>"
+    );
+    </script>
     <br />
     <br />
     <div class="breathing-repetition-setting">
