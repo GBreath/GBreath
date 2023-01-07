@@ -1,5 +1,17 @@
 <script lang="ts" setup>
 import "sweetalert2/src/sweetalert2.scss";
+import { useI18n } from "vue-i18n";
+
+const { locale } = useI18n();
+
+watch(locale, (value) => {
+  localStorage.setItem("app-language", value);
+});
+
+onMounted(() => {
+  locale.value = localStorage.getItem("app-language") || "en";
+});
+
 useHead({
   script: [
     {

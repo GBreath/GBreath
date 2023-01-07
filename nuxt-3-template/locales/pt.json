@@ -1,0 +1,58 @@
+{
+  "hello_world": "Olá mundo",
+  "home": {
+    "streak": {
+      "YOURSTREAK": "SEU PROGRESSO",
+      "YOURGOAL": "SEU OBJETIVO",
+      "days": "Dias",
+      "day": "Dia",
+      "months": "Meses",
+      "month": "Mês",
+      "years": "Ano",
+      "year": "Anos"
+    },
+    "content": {
+      "find_a_breathing_exercise_to_practice": "Encontre um exercicio de respiração para praticar"
+    },
+    "stress_control_using_breathing_exercises": "Exercícios de respiração no controle do estresse.",
+    "stress_control_using_breathing_exercises_content": "<p class=\"indent\">Os exercícios de respiração são ferramentas que podem ser utilizadas no dia a dia a todo momento. Eles são fáceis e úteis em diversas situações da vida, nos ajudando a desestressar e relaxar.</p><br><br><p class=\"indent\">Em um estudo da Faculdade de Psicologia em Pequim, na China, foi realizado um experimento com 40 pessoas durante 8 semanas para testar a eficácia dos exercícios de respiração na redução do estresse. Dessas 40 pessoas, 20 receberam um treinamento intensivo com técnicas de respiração. Ao final do estudo, o grupo que recebeu o treinamento mostrou números bem menores no nível de cortisol(hormônio do estresse), se comparado ao grupo que não recebeu treinamento.</p><br><br><p class=\"indent\">Podemos analisar também, os exercícios de meditação e yoga, que usam da respiração como meio para aumentar a eficácia de suas práticas, e muitas vezes esses exercícios são em sua grande maioria focados em reduzir o estresse e a ansiedade. Alguns deles também são direcionados ao sono, ajudando o praticante a dormir mais rápido ou a se livrar da insônia.</p><br><br><p class=\"indent\">Praticar exercícios de respiração frequentemente pode nos ajudar em dias estressantes, quando nosso corpo e mente não aguentam toda a carga estressante que nos foi imposta. Um curto período de tempo, realizando um exercícios de respiração pode nos dar aquele combustível para aguentar as atividades estressantes, e finalizar o dia menos cansados e mais satisfeitos com os nossos esforços.</p><br><br>",
+    "learn_more_about_breathing_exercises_benefits": "Entenda os benefícios dos exercícios de respiração",
+    "china_study_name": "Estudo da Faculdade de Psicologia em Pequim, na China",
+    "references": "Refêrencias"
+  },
+  "breathing": {
+    "details": {
+      "what_is": "Oque é",
+      "inhale_for": "Inspire por",
+      "hold_for": "Segure por",
+      "exhale_for": "Espire por",
+      "take_a_rest_for": "Descanse por",
+      "the_breathing_will_repeat": "A respiração vai repetir",
+      "times": "vezes",
+      "return": "Retornar",
+      "start_practice": "Começar a prática"
+    },
+    "practice": {
+      "breaths_to_go": "repirações restantes",
+      "return_to_see_other_breathings": "Retorne e veja outras respirações",
+      "your_breathing_session_is_complete": "Seu sessão de respiração está completa",
+      "i_hope_you_are_feeling_better": "Eu espero que esteja se sentindo melhor",
+      "inhale_for": "Inspire por",
+      "hold_for": "Segure por",
+      "exhale_for": "Espire por",
+      "take_a_rest_for": "Tenha um descanso",
+      "breathing_starting_in": "Respiração começando em"
+    }
+  },
+  "settings": {
+    "settings": "Configurações",
+    "sync_your_data_with_google": "Sincronize seus dados com o Google",
+    "set_your_breathing_streak_goal": "Defina seu objetivo de prática",
+    "set_here_your_streak_goal": "Defina aqui seu objetivo",
+    "not_working_yet": "Ainda não está funcionando",
+    "numbers_of_days": "Numero de dias",
+    "change_your_app_language": "Mude o idioma do seu app",
+    "allow_vibration": "Feedback de vibração",
+    "enable_dark_mode": "Ativar modo escuro"
+  }
+}

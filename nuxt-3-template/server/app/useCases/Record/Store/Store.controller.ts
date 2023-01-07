@@ -38,7 +38,7 @@ export class StoreRecordController {
   private async validation(request: unknown) {
     const validation = st.record({
       repetitions: st.integer({
-        min: 1,
+        min: 4,
         max: 120,
       }),
       exerciceIndex: st.integer({

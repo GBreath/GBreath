@@ -12,9 +12,7 @@ defineProps({
     class="flex flex-row items-center justify-between w-full"
     style="user-select: none"
   >
-    <nuxt-link to="/">
-      <h2 class="page-title">{{ title }}</h2>
-    </nuxt-link>
+    <h2 class="page-title">{{ title }}</h2>
 
     <button @click="$router.back()">
       <iconify-icon

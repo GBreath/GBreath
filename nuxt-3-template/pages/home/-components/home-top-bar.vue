@@ -7,7 +7,7 @@
       <iconify-icon width="28" icon="mdi:cog"></iconify-icon>
     </nuxt-link>
     <nuxt-link to="/">
-      <h1 class="page-title logo text">GBreath</h1>
+      <h1 class="page-title logo !text-3xl">GBreath</h1>
     </nuxt-link>
     <client-only>
       <div>
