@@ -54,6 +54,8 @@ export class InMemoryRecordRepository implements IRecordRepository {
       : false;
 
     function currentStreak() {
+      let oneItemWasAdded = false;
+
       const onlyDates = [
         ...new Set(
           descSortedRecords.map((r) => moment(r.createdAt).format("YYYY-MM-DD"))
@@ -65,6 +67,7 @@ export class InMemoryRecordRepository implements IRecordRepository {
         !onlyDates.includes(moment().format("YYYY-MM-DD"))
       ) {
         onlyDates.unshift(moment().format("YYYY-MM-DD"));
+        oneItemWasAdded = true;
       }
 
       let count = 0;
@@ -77,7 +80,7 @@ export class InMemoryRecordRepository implements IRecordRepository {
         )
           count++;
       });
-      return count;
+      return oneItemWasAdded ? count - 1 : count;
     }
 
     const streak = streakCanBeSaved ? currentStreak() : 0;

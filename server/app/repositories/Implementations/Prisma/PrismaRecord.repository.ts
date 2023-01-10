@@ -59,6 +59,8 @@ export class PrismaRecordRepository implements IRecordRepository {
       : false;
 
     function currentStreak() {
+      let oneItemWasAdded = false;
+
       const onlyDates = [
         ...new Set(
           descSortedRecords.map((r) => moment(r.createdAt).format("YYYY-MM-DD"))
@@ -70,6 +72,7 @@ export class PrismaRecordRepository implements IRecordRepository {
         !onlyDates.includes(moment().format("YYYY-MM-DD"))
       ) {
         onlyDates.unshift(moment().format("YYYY-MM-DD"));
+        oneItemWasAdded = true;
       }
 
       let count = 0;
@@ -79,12 +82,11 @@ export class PrismaRecordRepository implements IRecordRepository {
           new Date(moment().format("YYYY-MM-DD")).setUTCHours(0, 0, 0, 0) -
             new Date(el).setUTCHours(0, 0, 0, 0) ===
           i * 86400000
-        ) {
-          console.log(el);
+        )
           count++;
-        }
       });
-      return count;
+
+      return oneItemWasAdded ? count - 1 : count;
     }
 
     const streak = streakCanBeSaved ? currentStreak() : 0;
