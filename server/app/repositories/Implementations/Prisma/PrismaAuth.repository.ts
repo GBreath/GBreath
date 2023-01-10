@@ -5,6 +5,8 @@ import { User } from "~~/server/app/domain/entities/User";
 import { prismaClient } from "~~/server/database/db-client";
 import { transporter } from "~~/server/app/services/mail";
 import { $st } from "~~/server/i18n/lib";
+import { generateID } from "~~/utils/generateID";
+import { google } from "googleapis";
 import "dotenv/config";
 
 export class PrismaAuthRepository implements IAuthRepository {
@@ -170,5 +172,114 @@ export class PrismaAuthRepository implements IAuthRepository {
         password: bcrypt.hashSync(password, 8),
       },
     });
+  }
+
+  public async googleSignIn({
+    credential,
+  }: {
+    credential: string;
+  }): Promise<{ user: User; token: string; isANewAccount: boolean }> {
+    const client = new google.auth.OAuth2(
+      process.env.GOOGLE_CLIENT_ID,
+      process.env.GOOGLE_CLIENT_SECRET
+    );
+
+    const ticket = await client.verifyIdToken({
+      idToken: credential,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+
+    const userId = payload?.sub;
+
+    const userExists = await prismaClient.user.findFirst({
+      where: {
+        email: payload?.email,
+      },
+    });
+
+    const userHaveGoogle = userExists?.sub;
+
+    if (userExists && userHaveGoogle) {
+      const token = jwt.sign(
+        { ...userExists, password: "protected-data" },
+        process.env.JWT_SECRET as string,
+        {
+          expiresIn: "7d",
+        }
+      );
+
+      return {
+        user: {
+          ...userExists,
+          password: "protected-data",
+        },
+        token,
+        isANewAccount: false,
+      };
+    }
+
+    if (userExists && !userHaveGoogle) {
+      const user = await prismaClient.user.update({
+        where: {
+          id: userExists.id,
+        },
+        data: {
+          sub: userId,
+        },
+      });
+
+      const token = jwt.sign(
+        { ...user, password: "protected-data" },
+        process.env.JWT_SECRET as string,
+        {
+          expiresIn: "7d",
+        }
+      );
+
+      return {
+        user: {
+          ...user,
+          password: "protected-data",
+        },
+        token,
+        isANewAccount: false,
+      };
+    }
+
+    const randomPasswordHash = bcrypt.hashSync(generateID(16));
+
+    if (!payload?.email || !payload?.name) {
+      throw new Error(
+        $st("auth.this_google_account_does_not_has_an_email_or_name")
+      );
+    }
+
+    const user = await prismaClient.user.create({
+      data: {
+        email: payload.email,
+        name: payload.name,
+        password: randomPasswordHash,
+        sub: userId,
+      },
+    });
+
+    const token = jwt.sign(
+      { ...userExists, password: "protected-data" },
+      process.env.JWT_SECRET as string,
+      {
+        expiresIn: "7d",
+      }
+    );
+
+    return {
+      user: {
+        ...user,
+        password: "protected-data",
+      },
+      token,
+      isANewAccount: true,
+    };
   }
 }

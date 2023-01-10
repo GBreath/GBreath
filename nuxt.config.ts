@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     public: {
       APP_NAME: process.env.APP_NAME,
       APP_URL: process.env.APP_URL,
+      GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     },
     APP_URL: process.env.APP_URL,
   },

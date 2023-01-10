@@ -16,7 +16,7 @@ export async function ensureAuthenticated(
   isUser: () => boolean;
   roleIn: (roles: number[]) => boolean;
 }> {
-  const tokenHeader = event.req.headers.authorization;
+  const tokenHeader = event.node.req.headers.authorization;
 
   const errorFunctions = {
     isAdmin: () => false,

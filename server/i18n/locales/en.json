@@ -12,6 +12,8 @@
     "reset_password": "Reset password",
     "click_in_the_link_below": "Click in the link below to reset your password!",
     "the_link_below_expires_in_one_hour": "The link below expires in one hour.",
+    "this_google_account_does_not_has_an_email_or_name": "This google account does not has an email or name!",
+    "sorry_the_server_is_not_accepting_google_sign_in": "Sorry the server is not accepting Google Sign In!",
     "forgot-password": {
       "an_email_with_a_reset_link_was_sent_to_your_mail": "An email with a reset link was sent to your mail!"
     },

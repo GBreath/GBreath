@@ -14,6 +14,7 @@ model User {
   password String
   role     Int      @default(3)
   status   Int      @default(1)
+  sub      String?
   records  Record[]
   goals    Goal[]
 

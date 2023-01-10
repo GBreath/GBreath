@@ -12,6 +12,8 @@
     "reset_password": "Redefinir senha",
     "click_in_the_link_below": "Clique no link abaixo para redefinir sua senha!",
     "the_link_below_expires_in_one_hour": "O link abaixo expira em uma hora.",
+    "this_google_account_does_not_has_an_email_or_name": "Essa conta google não possui um email ou nome!",
+    "sorry_the_server_is_not_accepting_google_sign_in": "Desculpe o servidor não está aceitando logins com o Google!",
     "forgot-password": {
       "an_email_with_a_reset_link_was_sent_to_your_mail": "Foi enviado ao seu email um link contendo um formulário para redefinição de senha!"
     },

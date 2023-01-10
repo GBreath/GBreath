@@ -12,6 +12,7 @@ type AuthStoreProps = {
   token?: null | string;
   expires_at?: null | Date | moment.Moment;
   user?: null | User;
+  isGoogleAuth: boolean;
 };
 
 export const useAuthStore = defineStore("auth", {
@@ -20,6 +21,7 @@ export const useAuthStore = defineStore("auth", {
       token: null,
       expires_at: null,
       user: null,
+      isGoogleAuth: false,
     };
   },
   actions: {
@@ -87,6 +89,36 @@ export const useAuthStore = defineStore("auth", {
         this.expires_at = moment().add(7, "days").toDate();
 
         api.defaults.headers.common["authorization"] = useToken();
+
+        router.push("/");
+        loading.close();
+      } catch (error) {
+        useAxiosError(error, () => {
+          loading.close();
+        });
+      }
+    },
+    async signInWithGoogle(i18n: Composer, credential: string) {
+      const loading = useLoading();
+      const router = useRouter();
+
+      loading.open();
+      loading.hint = i18n.t("alerts.signing");
+
+      try {
+        const res = await api.post("/auth/google-sign-in", {
+          credential,
+        });
+
+        const result = useResult(res);
+
+        this.token = result.token;
+        this.user = result.user;
+        this.expires_at = moment().add(7, "days").toDate();
+        this.isGoogleAuth = true;
+
+        api.defaults.headers.common["authorization"] = useToken();
+        api.defaults.params["is-google-auth"] = true;
 
         router.push("/");
         loading.close();

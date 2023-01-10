@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import { useAuthStore } from "~~/store/auth";
+import jwt_decode from "jwt-decode";
+
+const { GOOGLE_CLIENT_ID } = useRuntimeConfig().public;
 
 const email = ref("");
 const password = ref("");
@@ -16,6 +19,33 @@ async function handleSubmit() {
     password: password.value,
   });
 }
+
+async function handleCredentialResponse(response: google.CredentialResponse) {
+  await authStore.signInWithGoogle(i18n, response.credential);
+}
+
+onMounted(() => {
+  google.accounts.id.initialize({
+    client_id: GOOGLE_CLIENT_ID,
+    callback: handleCredentialResponse,
+    ux_mode: "popup",
+  });
+
+  google.accounts.id.renderButton(
+    document.getElementById("buttonDiv") as HTMLElement,
+    {
+      theme: "filled_black",
+      locale: i18n.locale.value,
+      shape: "square",
+      logo_alignment: "left",
+      text: "continue_with",
+      type: "standard",
+      size: "large",
+    }
+  );
+
+  google.accounts.id.prompt();
+});
 
 definePageMeta({
   layout: "auth",
@@ -86,6 +116,13 @@ definePageMeta({
           {{ $t("auth.sign_in") }}
         </button>
       </form>
+
+      <div id="buttonDiv" class=""></div>
+
+      <button id="google-auth" class="btn btn-outline btn-info gap-4 w-full">
+        <iconify-icon icon="flat-color-icons:google" width="28"></iconify-icon>
+        Sign in with Google
+      </button>
     </section>
   </div>
 </template>

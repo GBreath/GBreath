@@ -38,6 +38,7 @@ onMounted(() => {
   api.defaults.params = {
     ...api.defaults.params,
     lang: locale.value,
+    "is-google-auth": authStore.isGoogleAuth,
   };
 });
 
@@ -51,6 +52,11 @@ useHead({
   script: [
     {
       src: "https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js",
+    },
+    {
+      src: "https://accounts.google.com/gsi/client",
+      async: true,
+      defer: true,
     },
   ],
   link: [

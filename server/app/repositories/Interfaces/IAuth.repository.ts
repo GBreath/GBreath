@@ -17,6 +17,12 @@ export interface IAuthRepository {
     name: string;
     password: string;
   }): Promise<{ user: User; token: string }>;
+  // Will not be tested
+  googleSignIn?({
+    credential,
+  }: {
+    credential: string;
+  }): Promise<{ user: User; token: string; isANewAccount: boolean }>;
   resetPassword({
     token,
     password,
