@@ -2,6 +2,7 @@ import { User } from "@prisma/client";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { prismaClient } from "../../database/db-client";
 import { H3Event } from "h3";
+import { $st } from "~~/server/i18n/lib";
 
 export async function ensureAuthenticated(
   event: H3Event,
@@ -30,7 +31,9 @@ export async function ensureAuthenticated(
 
     return {
       error: {
-        message: "You must to be loggedin to make this action",
+        message: $st(
+          "ensure-authenticated.you_must_to_be_loggedin_to_make_this_action"
+        ),
       },
       ...errorFunctions,
     };
@@ -43,7 +46,9 @@ export async function ensureAuthenticated(
 
     return {
       error: {
-        message: "You must to be loggedin to make this action",
+        message: $st(
+          "ensure-authenticated.you_must_to_be_loggedin_to_make_this_action"
+        ),
       },
       ...errorFunctions,
     };
@@ -56,7 +61,9 @@ export async function ensureAuthenticated(
 
     return {
       error: {
-        message: "You must to be loggedin to make this action",
+        message: $st(
+          "ensure-authenticated.you_must_to_be_loggedin_to_make_this_action"
+        ),
       },
       ...errorFunctions,
     };
@@ -78,8 +85,9 @@ export async function ensureAuthenticated(
 
     return {
       error: {
-        message:
-          "Probabily your user has been deleted or unactive, contact the admin to solve that.",
+        message: $st(
+          "ensure-authenticated.probabily_your_user_has_been_deleted"
+        ),
       },
       ...errorFunctions,
     };
@@ -90,7 +98,9 @@ export async function ensureAuthenticated(
 
     return {
       error: {
-        message: "You are not allowed to do this action!",
+        message: $st(
+          "ensure-authenticated.you_are_not_allowed_to_do_this_action"
+        ),
       },
       ...errorFunctions,
     };

@@ -4,6 +4,7 @@ import { AppError } from "~~/server/app/domain/types/Error";
 import { AppSuccess } from "~~/server/app/domain/types/Success";
 import * as st from "simple-runtypes";
 import { EMAIL_REGEX_MATCH } from "~~/utils/regex";
+import { $st } from "~~/server/i18n/lib";
 
 export class ForgotPasswordController {
   constructor(private useCase: ForgotPasswordUseCase) {}
@@ -18,7 +19,9 @@ export class ForgotPasswordController {
 
       return {
         result: {
-          message: "An email with a reset link was sent to your mail!",
+          message: $st(
+            "auth.forgot-password.an_email_with_a_reset_link_was_sent_to_your_mail"
+          ),
         },
       };
     } catch (error) {

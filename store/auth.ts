@@ -2,6 +2,7 @@ import { User } from "@prisma/client";
 import moment from "moment";
 import { defineStore } from "pinia";
 import Swal from "sweetalert2";
+import { Composer } from "vue-i18n";
 import { useAxiosError } from "~~/composables/useAxiosError";
 import { useResult } from "~~/composables/useResult";
 import { api } from "~~/service/api";
@@ -22,11 +23,14 @@ export const useAuthStore = defineStore("auth", {
     };
   },
   actions: {
-    async signIn({ email, password }: { email: string; password: string }) {
+    async signIn(
+      i18n: Composer,
+      { email, password }: { email: string; password: string }
+    ) {
       const loading = useLoading();
       const router = useRouter();
 
-      loading.hint = "Signing...";
+      loading.hint = i18n.t("alerts.signing");
       loading.open();
 
       try {
@@ -39,9 +43,11 @@ export const useAuthStore = defineStore("auth", {
 
         this.token = result.token;
         this.user = result.user;
-        this.expires_at = result.expires_at;
+        this.expires_at = moment().add(7, "days").toDate();
 
-        router.push("/dashboard");
+        api.defaults.headers.common["authorization"] = useToken();
+
+        router.push("/");
         loading.close();
       } catch (error) {
         useAxiosError(error, () => {
@@ -49,19 +55,22 @@ export const useAuthStore = defineStore("auth", {
         });
       }
     },
-    async signUp({
-      name,
-      email,
-      password,
-    }: {
-      name: string;
-      email: string;
-      password: string;
-    }) {
+    async signUp(
+      i18n: Composer,
+      {
+        name,
+        email,
+        password,
+      }: {
+        name: string;
+        email: string;
+        password: string;
+      }
+    ) {
       const loading = useLoading();
       const router = useRouter();
 
-      loading.hint = "Creating account...";
+      loading.hint = i18n.t("alerts.creating_account");
       loading.open();
 
       try {
@@ -75,9 +84,11 @@ export const useAuthStore = defineStore("auth", {
 
         this.token = result.token;
         this.user = result.user;
-        this.expires_at = result.expires_at;
+        this.expires_at = moment().add(7, "days").toDate();
 
-        router.push("/dashboard");
+        api.defaults.headers.common["authorization"] = useToken();
+
+        router.push("/");
         loading.close();
       } catch (error) {
         useAxiosError(error, () => {
@@ -92,13 +103,13 @@ export const useAuthStore = defineStore("auth", {
       this.user = null;
       this.expires_at = null;
 
-      router.push("/auth/sign-in");
+      router.push("/");
     },
-    async forgotPassword({ email }: { email: string }) {
+    async forgotPassword(i18n: Composer, { email }: { email: string }) {
       const loading = useLoading();
       const router = useRouter();
 
-      loading.hint = "Sending a reset email...";
+      loading.hint = i18n.t("alerts.sending_a_reset_email");
       loading.open();
 
       try {
@@ -112,9 +123,10 @@ export const useAuthStore = defineStore("auth", {
           icon: "success",
           title: result.message,
           showCancelButton: true,
-          cancelButtonText: "OK",
         });
+
         router.push("/auth/next-step-forgot-password");
+
         loading.close();
       } catch (error) {
         useAxiosError(error, () => {
@@ -122,17 +134,20 @@ export const useAuthStore = defineStore("auth", {
         });
       }
     },
-    async resetPassword({
-      resetPasswordToken,
-      password,
-    }: {
-      resetPasswordToken: string;
-      password: string;
-    }) {
+    async resetPassword(
+      i18n: Composer,
+      {
+        resetPasswordToken,
+        password,
+      }: {
+        resetPasswordToken: string;
+        password: string;
+      }
+    ) {
       const loading = useLoading();
       const router = useRouter();
 
-      loading.hint = "Reseting password...";
+      loading.hint = i18n.t("alerts.reseting_password");
       loading.open();
 
       try {

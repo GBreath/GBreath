@@ -47,10 +47,11 @@ export class InMemoryRecordRepository implements IRecordRepository {
       )
       .reverse();
 
-    const streakCanBeSaved =
-      moment().diff(moment(descSortedRecords[0].createdAt), "hours") >= 24
+    const streakCanBeSaved = descSortedRecords[0]
+      ? moment().diff(moment(descSortedRecords[0].createdAt), "hours") >= 24
         ? false
-        : true;
+        : true
+      : false;
 
     function currentStreak() {
       const onlyDates = [

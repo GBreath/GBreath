@@ -28,8 +28,8 @@ model Record {
   exerciceIndex Int
   repetitions   Int
 
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -41,8 +41,8 @@ model Goal {
   id   String @id @default(uuid())
   days Int
 
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

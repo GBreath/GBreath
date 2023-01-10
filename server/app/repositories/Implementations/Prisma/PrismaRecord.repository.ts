@@ -25,7 +25,7 @@ export class PrismaRecordRepository implements IRecordRepository {
       },
     });
 
-    return newRecord;
+    return newRecord as Record;
   }
 
   public async findMany({ userId }: { userId: string }): Promise<Record[]> {
@@ -35,7 +35,7 @@ export class PrismaRecordRepository implements IRecordRepository {
       },
     });
 
-    return userRecords;
+    return userRecords as Record[];
   }
 
   public async findStreak({
@@ -47,14 +47,16 @@ export class PrismaRecordRepository implements IRecordRepository {
 
     const descSortedRecords = userRecords
       .sort(
-        (a, b) => moment(a.createdAt).valueOf() - moment(b.createdAt).valueOf()
+        (a, b) =>
+          moment(a?.createdAt).valueOf() - moment(b?.createdAt).valueOf()
       )
       .reverse();
 
-    const streakCanBeSaved =
-      moment().diff(moment(descSortedRecords[0].createdAt), "hours") >= 24
+    const streakCanBeSaved = descSortedRecords[0]
+      ? moment().diff(moment(descSortedRecords[0].createdAt), "hours") >= 24
         ? false
-        : true;
+        : true
+      : false;
 
     function currentStreak() {
       const onlyDates = [

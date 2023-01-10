@@ -3,6 +3,7 @@ import { H3Event } from "h3";
 import { AppError } from "~~/server/app/domain/types/Error";
 import { AppSuccess } from "~~/server/app/domain/types/Success";
 import * as st from "simple-runtypes";
+import { $st } from "~~/server/i18n/lib";
 
 export class ResetPasswordController {
   constructor(private useCase: ResetPasswordUseCase) {}
@@ -19,8 +20,9 @@ export class ResetPasswordController {
 
       return {
         result: {
-          message:
-            "Your password has been successfully reseted. Try to login again!",
+          message: $st(
+            "auth.reset-password.your_password_has_been_successfully_reseted"
+          ),
         },
       };
     } catch (error) {

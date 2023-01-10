@@ -1,7 +1,10 @@
 <script lang="ts" setup>
+import { useAuthStore } from "~~/store/auth";
 import { usePreferences } from "~~/store/preferences";
 
 const preferences = usePreferences();
+
+const authStore = useAuthStore();
 </script>
 
 <template>
@@ -54,5 +57,39 @@ const preferences = usePreferences();
         </label>
       </div>
     </div>
+
+    <div class="grid lg:grid-cols-2 grid-cols-1 w-full gap-4">
+      <nuxt-link
+        to="/report-or-feedback"
+        class="sm:flex hidden btn btn-warning w-full"
+      >
+        {{ $t("alerts.report_errors_or_give_feedback") }}
+      </nuxt-link>
+
+      <nuxt-link
+        v-if="authStore.token"
+        to="/profile"
+        class="btn btn-info w-full"
+      >
+        {{ $t("alerts.looking_for_how_to_change_your_goal") }}
+      </nuxt-link>
+
+      <nuxt-link
+        to="/report-or-feedback"
+        class="sm:hidden flex btn btn-warning w-full"
+      >
+        {{ $t("alerts.report_errors_or_give_feedback") }}
+      </nuxt-link>
+    </div>
+
+    <a
+      href="https://github.com/GBreath/GBreath"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-outline w-full gap-2"
+    >
+      <iconify-icon icon="mdi:github" width="28"></iconify-icon>
+      {{ $t("alerts.contribute_to_the_project_here") }}
+    </a>
   </div>
 </template>

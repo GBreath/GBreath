@@ -1,6 +1,7 @@
 import moment, { Moment } from "moment";
 import { Goal } from "~~/server/app/domain/entities/Goal";
 import { prismaClient } from "~~/server/database/db-client";
+import { $st } from "~~/server/i18n/lib";
 import { IGoalRepository } from "../../Interfaces/IGoal.repository";
 
 export class PrismaGoalRepository implements IGoalRepository {
@@ -18,7 +19,7 @@ export class PrismaGoalRepository implements IGoalRepository {
       },
     });
 
-    return newGoal;
+    return newGoal as Goal;
   }
 
   public async findMany({ userId }: { userId: string }): Promise<Goal[]> {
@@ -28,7 +29,7 @@ export class PrismaGoalRepository implements IGoalRepository {
       },
     });
 
-    return goals;
+    return goals as Goal[];
   }
 
   public async findCurrent({ userId }: { userId: string }): Promise<Goal> {
@@ -84,7 +85,7 @@ export class PrismaGoalRepository implements IGoalRepository {
     });
 
     if (!currentGoalByDate) {
-      throw new Error("There is not goal to this date!");
+      throw new Error($st("goal.there_is_not_goal_to_this_date"));
     }
 
     return currentGoalByDate;

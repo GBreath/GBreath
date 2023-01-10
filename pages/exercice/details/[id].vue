@@ -54,14 +54,11 @@ const execice = exercices[id];
     </span>
 
     <span class="grid grid-cols-2 gap-4 w-full">
-      <button class="btn btn-secondary w-full" @click="$router.back()">
+      <button class="btn btn-outline w-full" @click="$router.back()">
         {{ $t("breathing.details.return") }}
       </button>
 
-      <nuxt-link
-        class="btn btn-primary w-full"
-        :to="`/exercice/practice/${id}`"
-      >
+      <nuxt-link class="btn btn-info w-full" :to="`/exercice/practice/${id}`">
         {{ $t("breathing.details.start_practice") }}
       </nuxt-link>
     </span>

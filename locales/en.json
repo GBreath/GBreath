@@ -1,6 +1,6 @@
 {
-  "hello_world": "Hello world",
   "home": {
+    "sign_in_to_access_streak_tracker": "Sign In or Sign Up to access the Streak Counter!",
     "streak": {
       "YOURSTREAK": "YOUR STREAK",
       "YOURGOAL": "YOUR GOAL",
@@ -41,7 +41,8 @@
       "hold_for": "Hold for",
       "exhale_for": "Exhale for",
       "take_a_rest_for": "Take a rest for",
-      "breathing_starting_in": "Breathing starting in"
+      "breathing_starting_in": "Breathing starting in",
+      "your_exercice_has_been_successfully_registered": "Your breathing session has been successfully registered!"
     }
   },
   "settings": {
@@ -54,5 +55,88 @@
     "change_your_app_language": "Change your app language",
     "allow_vibration": "Allow vibration feedback",
     "enable_dark_mode": "Enable dark mode"
+  },
+  "profile": {
+    "profile": "Your profile",
+    "your_new_goal_has_been_successfully_changed": "Your new goal has been successfully changed!",
+    "enter_your_new_goal": "Enter your new goal *",
+    "enter_the_value": "Enter the value",
+    "save_the_new_goal": "Save the new goal",
+    "days": "Days"
+  },
+  "auth": {
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "sign_out": "Sign Out",
+    "forgot-password": {
+      "forgot_password": "Forgot password?",
+      "what_is_your_email": "What is your email?",
+      "your_email": "Your email...",
+      "recover_password": "Recover password"
+    },
+    "reset-password": {
+      "reset_your_password": "Reset your password",
+      "what_is_your_new_password": "What is your new password?",
+      "your_password": "Your password...",
+      "reset_password": "Reset password"
+    },
+    "next-step-forgot-password": {
+      "access_your_email_to_see_the_reset_link": "Access your email to see the reset link",
+      "go_to_login_page": "Go to login page"
+    },
+    "sign-in": {
+      "sign_in_to": "Sign in to",
+      "what_is_your_email": "What is your email?",
+      "your_email": "Your email...",
+      "what_is_your_password": "What is your password?",
+      "your_password": "Your password...",
+      "does_not_have_an_account_create_one": "Does not have an account, create one.",
+      "forgot_your_password": "Forgot your password?"
+    },
+    "sign-up": {
+      "sign_up_to": "Sign up to",
+      "what_is_your_email": "What is your email?",
+      "your_email": "Your email...",
+      "what_is_your_name": "What is your name?",
+      "your_name": "Your name...",
+      "what_is_your_password": "What is your password?",
+      "your_password": "Your password...",
+      "already_have_an_account_access_it": "Already have an account, access it."
+    }
+  },
+  "report-or-feedback": {
+    "report_error_or_give_a_feedback": "Report errors or give a feedback",
+    "your_message_has_been_succcessfully_sent": "Your message has been succcessfully sent!",
+    "thank_you_for_help-the_GBreath_to_be_better_1": "Thank you for help the GBreath to be better! Soon you will receive an answer about your message in your email!",
+    "thank_you_for_help-the_GBreath_to_be_better_2": "Thank you for help the GBreath to be better! Your message will be read soon!",
+    "what_is_your_name": "What is your name? *",
+    "what_is_your_email": "What is your email? (optional)",
+    "what_is_your_message": "What is your message? *",
+    "type_here": "Type here",
+    "type_here_if_you_want_an_answer_of_your_feedback": "Type here if you want an answer of your feedback",
+    "type_here_what_is_your_opinion_sugestions_bug_etc": "Type here what is your opinion, sugestions, bug, etc..."
+  },
+  "alerts": {
+    "signing": "Signing...",
+    "creating_account": "Creating account...",
+    "sending_a_reset_email": "Sending a reset email...",
+    "loading_data": "Loading data...",
+    "changing_data": "Changing data...",
+    "reseting_password": "Reseting password...",
+    "saving_data": "Saving data...",
+    "sending_message": "Sending message...",
+    "looking_for_how_to_change_your_goal": "Change your goal here!",
+    "do_you_really_want_signout": "Do you really want to Sign Out?",
+    "report_errors_or_give_feedback": "Report errors or give a feedback.",
+    "contribute_to_the_project_here": "Contribute to the project here!",
+    "if_you_leave_now_that_session_will_not_be_recorded_in_your_streak": "If you leave now, that session will not be recorded in your streak!",
+    "do_you_really_want_to_leave": "Do you really want to leave?"
+  },
+  "buttons": {
+    "yes_sign_out": "Yes, Sign Out!",
+    "yes_leave": "Yes, Leave!",
+    "cancel": "Cancel",
+    "return": "Return",
+    "send_message": "Send message"
   }
 }

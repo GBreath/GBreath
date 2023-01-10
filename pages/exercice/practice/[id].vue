@@ -9,21 +9,32 @@ import {
 } from "~/data/vibrate";
 import { usePreferences } from "~~/store/preferences";
 import { useI18n } from "vue-i18n";
+import { useStreakStore } from "~~/store/streak";
+import { useAuthStore } from "~~/store/auth";
+import Swal from "sweetalert2";
 
+const router = useRouter();
 const route = useRoute();
+
 const preferences = usePreferences();
-const { t: $t } = useI18n();
+const streakStore = useStreakStore();
+const authStore = useAuthStore();
+
+const i18n = useI18n();
+
+const { t: $t } = i18n;
 
 const id = Number(route.params.id);
 
 const exercise = exercices[id];
+
+const repeatTime = preferences.repeat;
 
 let currentAnimationDuration = ref(0);
 let currentAnimation = ref("");
 let visualReturn = ref("");
 let isFinished = ref(false);
 let alreadyRun = ref(0);
-let repeatTime = preferences.repeat;
 
 interface IBreathingStep {
   stepTime: number;
@@ -31,7 +42,7 @@ interface IBreathingStep {
   nextStep(): void;
 }
 
-var stepTimer = setInterval(() => null, 1000);
+let stepTimer = setInterval(() => null, 1000);
 
 function breathingStep({ stepTime, prefixText, nextStep }: IBreathingStep) {
   let stepTimerCounter = stepTime;
@@ -53,14 +64,6 @@ function breathingStep({ stepTime, prefixText, nextStep }: IBreathingStep) {
     }
   }
 }
-
-onMounted(() => {
-  startBreathing();
-});
-
-onUnmounted(() => {
-  clearInterval(stepTimer);
-});
 
 function startBreathing() {
   currentAnimation.value = "";
@@ -122,10 +125,47 @@ function rest() {
 
   if (alreadyRun.value === Number(repeatTime)) {
     navigator.vibrate(finishVibrate);
-    isFinished.value = true;
     clearInterval(stepTimer);
+    isFinished.value = true;
   }
 }
+
+async function handleGoBack() {
+  if (isFinished.value || !authStore.token) {
+    return router.push("/");
+  }
+
+  const res = await Swal.fire({
+    title: $t(
+      "alerts.if_you_leave_now_that_session_will_not_be_recorded_in_your_streak"
+    ),
+    text: $t("alerts.do_you_really_want_to_leave"),
+    showCancelButton: true,
+    confirmButtonText: $t("buttons.yes_leave"),
+    cancelButtonText: $t("buttons.cancel"),
+  });
+
+  if (res.isConfirmed) {
+    return router.push("/");
+  }
+}
+
+watch(isFinished, async () => {
+  if (authStore.token) {
+    await streakStore.saveRecord(i18n, {
+      exerciceIndex: id,
+      repetitions: repeatTime,
+    });
+  }
+});
+
+onMounted(() => {
+  startBreathing();
+});
+
+onUnmounted(() => {
+  clearInterval(stepTimer);
+});
 </script>
 
 <template>
@@ -147,6 +187,7 @@ function rest() {
     >
     <template v-else>
       <section class="completed">
+        handleGoBack
         <h3>
           <strong
             >{{
@@ -279,7 +320,7 @@ function rest() {
         </svg>
       </section>
     </template>
-    <button class="btn btn-primary w-full" @click="$router.back()">
+    <button class="btn btn-primary w-full" @click="handleGoBack()">
       {{ $t("breathing.practice.return_to_see_other_breathings") }}
     </button>
   </div>

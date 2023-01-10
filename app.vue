@@ -1,15 +1,50 @@
 <script lang="ts" setup>
 import "sweetalert2/src/sweetalert2.scss";
 import { useI18n } from "vue-i18n";
+import { api } from "./service/api";
+import { useAuthStore } from "./store/auth";
+import { usePreferences } from "./store/preferences";
 
 const { locale } = useI18n();
 
+const preferences = usePreferences();
+
+const authStore = useAuthStore();
+
 watch(locale, (value) => {
+  api.defaults.params = {
+    ...api.defaults.params,
+    lang: value,
+  };
+
   localStorage.setItem("app-language", value);
+  preferences.lang = value;
 });
 
 onMounted(() => {
-  locale.value = localStorage.getItem("app-language") || "en";
+  const savedLanguage = localStorage.getItem("app-language");
+
+  const userLang = navigator.language.split("-")[0];
+
+  if (!savedLanguage) {
+    locale.value = userLang;
+    localStorage.setItem("app-language", userLang);
+  } else {
+    locale.value = savedLanguage;
+  }
+
+  preferences.lang = locale.value;
+
+  api.defaults.params = {
+    ...api.defaults.params,
+    lang: locale.value,
+  };
+});
+
+onBeforeMount(() => {
+  if (authStore.token) {
+    api.defaults.headers.common["authorization"] = useToken();
+  }
 });
 
 useHead({

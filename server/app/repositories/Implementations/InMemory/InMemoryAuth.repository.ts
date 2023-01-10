@@ -27,7 +27,7 @@ export class InMemoryAuthRepository implements IAuthRepository {
       { ...user, password: "protected-data" },
       process.env.JWT_SECRET as string,
       {
-        expiresIn: "24h",
+        expiresIn: "7d",
       }
     );
 
@@ -63,7 +63,7 @@ export class InMemoryAuthRepository implements IAuthRepository {
       { ...newUser, password: "protected-data" },
       process.env.JWT_SECRET as string,
       {
-        expiresIn: "24h",
+        expiresIn: "7d",
       }
     );
 

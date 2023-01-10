@@ -1,6 +1,6 @@
 {
-  "hello_world": "Olá mundo",
   "home": {
+    "sign_in_to_access_streak_tracker": "Entre ou Se Cadastre para ter acesso ao Registro de Progresso!",
     "streak": {
       "YOURSTREAK": "SEU PROGRESSO",
       "YOURGOAL": "SEU OBJETIVO",
@@ -41,7 +41,8 @@
       "hold_for": "Segure por",
       "exhale_for": "Espire por",
       "take_a_rest_for": "Tenha um descanso",
-      "breathing_starting_in": "Respiração começando em"
+      "breathing_starting_in": "Respiração começando em",
+      "your_exercice_has_been_successfully_registered": "Sua sessão de respiração foi registrada com succeso!"
     }
   },
   "settings": {
@@ -54,5 +55,88 @@
     "change_your_app_language": "Mude o idioma do seu app",
     "allow_vibration": "Feedback de vibração",
     "enable_dark_mode": "Ativar modo escuro"
+  },
+  "profile": {
+    "profile": "Seu perfil",
+    "your_new_goal_has_been_successfully_changed": "Seu objetivo foi alterado com sucesso!",
+    "enter_your_new_goal": "Coloque seu novo objetivo *",
+    "enter_the_value": "Coloque um valor",
+    "save_the_new_goal": "Salvar novo objetivo",
+    "days": "Dias"
+  },
+  "auth": {
+    "sign_in": "Entrar",
+    "sign_up": "Registrar-se",
+    "sign_out": "Encerrar sessão",
+    "forgot-password": {
+      "forgot_password": "Esqueceu a senha?",
+      "what_is_your_email": "Qual é seu email?",
+      "your_email": "Seu email...",
+      "recover_password": "Recuperar senha"
+    },
+    "reset-password": {
+      "reset_your_password": "Redefina sua senha",
+      "what_is_your_new_password": "Qual é sua nova senha?",
+      "your_password": "Sua senha...",
+      "reset_password": "Redefinir senha"
+    },
+    "next-step-forgot-password": {
+      "access_your_email_to_see_the_reset_link": "Acesse seu email para ver o link de recuperação de senha.",
+      "go_to_login_page": "Ir para tela de login"
+    },
+    "sign-in": {
+      "sign_in_to": "Fazer login em",
+      "what_is_your_email": "Qual é seu email?",
+      "your_email": "Seu email...",
+      "what_is_your_password": "Qual é sua senha?",
+      "your_password": "Sua senha...",
+      "does_not_have_an_account_create_one": "Não tem uma conta, crie uma.",
+      "forgot_your_password": "Esqueceu sua senha?"
+    },
+    "sign-up": {
+      "sign_up_to": "Registrar-se em",
+      "what_is_your_email": "Qual é seu email?",
+      "your_email": "Seu email...",
+      "what_is_your_name": "Qual é seu nome?",
+      "your_name": "Seu nome...",
+      "what_is_your_password": "Qual é sua senha?",
+      "your_password": "Sua senha...",
+      "already_have_an_account_access_it": "Já possui uma conta? Acesse ela."
+    }
+  },
+  "report-or-feedback": {
+    "report_error_or_give_a_feedback": "Reporte erros ou deixe um feedback",
+    "your_message_has_been_succcessfully_sent": "Sua mensagem foi enviada com succeso!",
+    "thank_you_for_help_the_GBreath_to_be_better_1": "Obrigado por ajudar o GBreath a ficar melhor! Em breve você receberá um resposta sobre sua mensagem no seu email!",
+    "thank_you_for_help_the_GBreath_to_be_better_2": "Obrigado por ajudar o GBreath a ficar melhor! Sua mensagem será lida em breve!",
+    "what_is_your_name": "Qual é seu nome? *",
+    "what_is_your_email": "Qual é seu email? (optional)",
+    "what_is_your_message": "Qual é a sua mensagem? *",
+    "type_here": "Escreva aqui",
+    "type_here_if_you_want_an_answer_of_your_feedback": "Escreva aqui se você quer um feedback da sua mensagem",
+    "type_here_what_is_your_opinion_sugestions_bug_etc": "Escreva aqui sua opinião, sugestão, bug, etc..."
+  },
+  "alerts": {
+    "signing": "Entrando...",
+    "creating_account": "Criando conta...",
+    "sending_a_reset_email": "Enviando email de recuperação...",
+    "loading_data": "Carregando dados...",
+    "changing_data": "Alterando dados...",
+    "reseting_password": "Redefinindo senha...",
+    "saving_data": "Salvando dados...",
+    "sending_message": "Enviando mensagem...",
+    "looking_for_how_to_change_your_goal": "Altere seu objetivo aqui!",
+    "do_you_really_want_signout": "Você realmente deseja encerrar a sessão?",
+    "report_errors_or_give_feedback": "Reporte erros ou deixe um feedback.",
+    "contribute_to_the_project_here": "Contribua com o projeto aqui!",
+    "if_you_leave_now_that_session_will_not_be_recorded_in_your_streak": "Se sair agora, essa sessão não será registrada no seu progresso!",
+    "do_you_really_want_to_leave": "Realmente deseja sair?"
+  },
+  "buttons": {
+    "cancel": "Cancelar",
+    "return": "Retornar",
+    "yes_sign_out": "Sim, encerrar!",
+    "yes_leave": "Yes, sair!",
+    "send_message": "Enviar mensagem"
   }
 }
