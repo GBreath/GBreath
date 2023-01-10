@@ -79,8 +79,10 @@ export class PrismaRecordRepository implements IRecordRepository {
           new Date(moment().format("YYYY-MM-DD")).setUTCHours(0, 0, 0, 0) -
             new Date(el).setUTCHours(0, 0, 0, 0) ===
           i * 86400000
-        )
+        ) {
+          console.log(el);
           count++;
+        }
       });
       return count;
     }
