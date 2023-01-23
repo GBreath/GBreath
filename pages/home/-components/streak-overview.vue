@@ -3,6 +3,8 @@ import { useI18n } from "vue-i18n";
 import { useAuthStore } from "~~/store/auth";
 import { useStreakStore } from "~~/store/streak";
 
+import ModalAwards from "./modal-awards.vue";
+
 const authStore = useAuthStore();
 const streakStore = useStreakStore();
 
@@ -71,6 +73,25 @@ onMounted(async () => {
         max="100"
       ></progress>
     </span>
+
+    <modal-awards />
+
+    <label
+      for="awards-modal"
+      class="flex flex-row items-center cursor-pointer mt-4 justify-start gap-4 w-full border border-base-content px-4 py-2 rounded-md"
+    >
+      <img
+        class="w-12 h-12 object-cover"
+        :src="`/images/awards/${streakStore.overview.award}.png`"
+        :alt="'Image: ' + $t(`awards.${streakStore.overview.award}`)"
+      />
+      <div class="flex flex-col items-start justify-start gap-0">
+        <h3 class="mb-0 text-lg font-bold">
+          {{ $t(`awards.${streakStore.overview.award}`) }}
+        </h3>
+        <small>{{ $t("home.click_to_see_more") }}!</small>
+      </div>
+    </label>
   </div>
 
   <nuxt-link

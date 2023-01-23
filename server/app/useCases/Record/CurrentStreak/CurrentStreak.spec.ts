@@ -47,5 +47,6 @@ describe("Testing the CurrentStreak useCase", () => {
     expect(result.goal).toEqual(6);
     expect(result.streak).toEqual(3);
     expect(result.progress).toEqual(50);
+    expect(result.award).toEqual("gold-medal-40p");
   });
 });

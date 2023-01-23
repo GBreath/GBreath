@@ -18,7 +18,8 @@
     "stress_control_using_breathing_exercises_content": "<p class=\"indent\">Os exercícios de respiração são ferramentas que podem ser utilizadas no dia a dia a todo momento. Eles são fáceis e úteis em diversas situações da vida, nos ajudando a desestressar e relaxar.</p><br><br><p class=\"indent\">Em um estudo da Faculdade de Psicologia em Pequim, na China, foi realizado um experimento com 40 pessoas durante 8 semanas para testar a eficácia dos exercícios de respiração na redução do estresse. Dessas 40 pessoas, 20 receberam um treinamento intensivo com técnicas de respiração. Ao final do estudo, o grupo que recebeu o treinamento mostrou números bem menores no nível de cortisol(hormônio do estresse), se comparado ao grupo que não recebeu treinamento.</p><br><br><p class=\"indent\">Podemos analisar também, os exercícios de meditação e yoga, que usam da respiração como meio para aumentar a eficácia de suas práticas, e muitas vezes esses exercícios são em sua grande maioria focados em reduzir o estresse e a ansiedade. Alguns deles também são direcionados ao sono, ajudando o praticante a dormir mais rápido ou a se livrar da insônia.</p><br><br><p class=\"indent\">Praticar exercícios de respiração frequentemente pode nos ajudar em dias estressantes, quando nosso corpo e mente não aguentam toda a carga estressante que nos foi imposta. Um curto período de tempo, realizando um exercícios de respiração pode nos dar aquele combustível para aguentar as atividades estressantes, e finalizar o dia menos cansados e mais satisfeitos com os nossos esforços.</p><br><br>",
     "learn_more_about_breathing_exercises_benefits": "Entenda os benefícios dos exercícios de respiração",
     "china_study_name": "Estudo da Faculdade de Psicologia em Pequim, na China",
-    "references": "Refêrencias"
+    "references": "Refêrencias",
+    "click_to_see_more": "Clique para ver mais"
   },
   "breathing": {
     "details": {
@@ -62,7 +63,11 @@
     "enter_your_new_goal": "Coloque seu novo objetivo *",
     "enter_the_value": "Coloque um valor",
     "save_the_new_goal": "Salvar novo objetivo",
-    "days": "Dias"
+    "days": "Dias",
+    "more_than_x_days": "{days} dias ou mais",
+    "of_the_streak": "do objetivo",
+    "awards_that_your_will_recieve": "Premios que você receberá quando atingir",
+    "you_will_recieve": "Você receberá"
   },
   "auth": {
     "sign_in": "Entrar",
@@ -137,6 +142,22 @@
     "return": "Retornar",
     "yes_sign_out": "Sim, encerrar!",
     "yes_leave": "Yes, sair!",
-    "send_message": "Enviar mensagem"
+    "send_message": "Enviar mensagem",
+    "close": "Fechar"
+  },
+  "awards": {
+    "awards_overview": "Visão geral dos prêmios",
+    "your_current_award": "Seu prêmio atual",
+    "your_next_award": "Seu proximo prêmio",
+    "no-award": "Primeiros passos",
+    "change-goal": "Aumente seu objetivo para conseguir mais prêmios!",
+    "bronze-medal": "Medalha de bronze",
+    "silver-medal": "Medalha de prata",
+    "gold-medal": "Medalha de ouro",
+    "bronze-trophy": "Troféu de bronze",
+    "silver-trophy": "Troféu de prata",
+    "gold-trophy": "Troféu de ouro",
+    "diamond-trophy": "Troféu de diamente",
+    "crown": "Coroa"
   }
 }

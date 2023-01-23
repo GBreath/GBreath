@@ -38,7 +38,7 @@ export class StoreGoalController {
   private async validation(request: unknown) {
     const validation = st.record({
       days: st.integer({
-        min: 1,
+        min: 7,
         max: 3650,
       }),
     });

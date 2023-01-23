@@ -4,6 +4,7 @@ import { IRecordRepository } from "../../Interfaces/IRecord.repository";
 import { mapRange } from "~~/utils/mapRange";
 import moment from "moment";
 import { prismaClient } from "~~/server/database/db-client";
+import { getAward } from "~~/server/app/utils/getAward";
 
 export class PrismaRecordRepository implements IRecordRepository {
   constructor(private goalRepository: IGoalRepository) {}
@@ -38,11 +39,12 @@ export class PrismaRecordRepository implements IRecordRepository {
     return userRecords as Record[];
   }
 
-  public async findStreak({
-    userId,
-  }: {
-    userId: string;
-  }): Promise<{ streak: number; goal: number; progress: number }> {
+  public async findStreak({ userId }: { userId: string }): Promise<{
+    streak: number;
+    goal: number;
+    progress: number;
+    award: string;
+  }> {
     const userRecords = await this.findMany({ userId });
 
     const descSortedRecords = userRecords
@@ -95,10 +97,13 @@ export class PrismaRecordRepository implements IRecordRepository {
 
     const progress = mapRange(streak, 0, goal.days, 0, 100);
 
+    const award = getAward(goal.days, progress);
+
     return {
       streak,
       goal: goal.days,
       progress,
+      award,
     };
   }
 }

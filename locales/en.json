@@ -18,7 +18,8 @@
     "stress_control_using_breathing_exercises_content": "<p class=\"indent\">The breathing exercises are tools that can be used all day. They are easy to do and really useful in a lot of situations in our life, helping us to be calm and relax.</p><br><br><p class=\"indent\">In a study from the Faculty of Psychology in Beijing, China, a experiment was made with 40 people for 8 weeks to test the efficiency of the breathing exercises in the stress reduction. Twenty of these people received intensive training with breathing techniques. And at the end of this study, the group that received the training showed a decreased level of cortisol(stress hormone), compared to the group that did not receive the training.</p><br><br><p class=\"indent\">We can also see the meditation and yoga exercises that use breathing to increase the efficiency in their practices, and most of the time, these exercises are focused on the reduction of stress and anxiety. Others also focus on the sleep quality, helping the user to sleep better or to reduce insomnia.</p><br><br><p class=\"indent\">Practicing breathing exercises frequently can help us in the stressful days, when our body and mind cant stand all these stressful charges the day impose on us. A short time practicing a breathing exercise can give us the gas to stand all stressful activities, and finish the day less stressed, more relaxed and satisfied with our efforts.</p><br><br>",
     "learn_more_about_breathing_exercises_benefits": "Learn more about Breathing Exercises benefits",
     "china_study_name": "Study from Faculty of Psychology in Beijing, China",
-    "references": "References"
+    "references": "References",
+    "click_to_see_more": "Click to see more"
   },
   "breathing": {
     "details": {
@@ -62,7 +63,11 @@
     "enter_your_new_goal": "Enter your new goal *",
     "enter_the_value": "Enter the value",
     "save_the_new_goal": "Save the new goal",
-    "days": "Days"
+    "days": "Days",
+    "more_than_x_days": "{days} days or more",
+    "of_the_streak": "of the streak",
+    "awards_that_your_will_recieve": "Awards that you will receive when you reach",
+    "you_will_recieve": "You will receive"
   },
   "auth": {
     "sign_in": "Sign In",
@@ -137,6 +142,22 @@
     "yes_leave": "Yes, Leave!",
     "cancel": "Cancel",
     "return": "Return",
-    "send_message": "Send message"
+    "send_message": "Send message",
+    "close": "Close"
+  },
+  "awards": {
+    "awards_overview": "Awards overview",
+    "your_current_award": "Your current award",
+    "your_next_award": "Your next award",
+    "no-award": "First steps",
+    "change-goal": "Increase your goal to get more awards!",
+    "bronze-medal": "Bronze Medal",
+    "silver-medal": "Silver Medal",
+    "gold-medal": "Gold Medal",
+    "bronze-trophy": "Bronze Trophy",
+    "silver-trophy": "Silver Trophy",
+    "gold-trophy": "Gold Trophy",
+    "diamond-trophy": "Diamond Trophy",
+    "crown": "Crown"
   }
 }

@@ -11,6 +11,8 @@ export const useStreakStore = defineStore("streak", {
         streak: 0,
         goal: 0,
         progress: 0,
+        award: "",
+        nextaward: "",
       },
     };
   },

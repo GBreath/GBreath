@@ -4,6 +4,7 @@ import { IGoalRepository } from "../../Interfaces/IGoal.repository";
 import { IRecordRepository } from "../../Interfaces/IRecord.repository";
 import { mapRange } from "~~/utils/mapRange";
 import moment from "moment";
+import { getAward } from "~~/server/app/utils/getAward";
 
 export class InMemoryRecordRepository implements IRecordRepository {
   constructor(private goalRepository: IGoalRepository) {}
@@ -34,11 +35,12 @@ export class InMemoryRecordRepository implements IRecordRepository {
     return userRecords;
   }
 
-  public async findStreak({
-    userId,
-  }: {
-    userId: string;
-  }): Promise<{ streak: number; goal: number; progress: number }> {
+  public async findStreak({ userId }: { userId: string }): Promise<{
+    streak: number;
+    goal: number;
+    progress: number;
+    award: string;
+  }> {
     const userRecords = await this.findMany({ userId });
 
     const descSortedRecords = userRecords
@@ -89,10 +91,13 @@ export class InMemoryRecordRepository implements IRecordRepository {
 
     const progress = mapRange(streak, 0, goal.days, 0, 100);
 
+    const award = getAward(goal.days, progress);
+
     return {
       streak,
       goal: goal.days,
       progress,
+      award,
     };
   }
 }
