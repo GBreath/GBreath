@@ -49,6 +49,84 @@ onBeforeMount(() => {
 });
 
 useHead({
+  title: "GBreath - Your breathing guide",
+  htmlAttrs: {
+    lang: locale.value,
+    translate: "no",
+  },
+  meta: [
+    {
+      name: "title",
+      content: "GBreath - Your breathing guide",
+    },
+    {
+      name: "description",
+      content:
+        "GBreath is a open source and free project that help you on your breathing practice.",
+    },
+    {
+      name: "keywords",
+      content: "breathing,breath,mindfullness",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+    {
+      "http-equiv": "Content-Type",
+      content: "text/html; charset=utf-8",
+    },
+    {
+      name: "revisit-after",
+      content: "7 days",
+    },
+    {
+      name: "author",
+      content: "PatoGordo",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:url",
+      content: "https://gbreath.netlify.app/",
+    },
+    {
+      property: "og:title",
+      content: "GBreath - Your breathing guide",
+    },
+    {
+      property: "og:description",
+      content:
+        "GBreath is a open source and free project that help you on your breathing practice.",
+    },
+    {
+      property: "og:image",
+      content: "https://gbreath.netlify.app/images/seo-image.png",
+    },
+    {
+      property: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      property: "twitter:url",
+      content: "https://gbreath.netlify.app/",
+    },
+    {
+      property: "twitter:title",
+      content: "GBreath - Your breathing guide",
+    },
+    {
+      property: "twitter:description",
+      content:
+        "GBreath is a open source and free project that help you on your breathing practice.",
+    },
+    {
+      property: "twitter:image",
+      content: "https://gbreath.netlify.app/images/seo-image.png",
+    },
+  ],
   script: [
     {
       src: "https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js",
@@ -60,6 +138,11 @@ useHead({
     },
   ],
   link: [
+    {
+      rel: "shortcut icon",
+      type: "image/png",
+      href: "/images/favicon.png",
+    },
     {
       rel: "preconnect",
       href: "https://fonts.googleapis.com",
