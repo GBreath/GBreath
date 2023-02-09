@@ -1,0 +1,167 @@
+{
+  "home": {
+    "sign_in_to_access_streak_tracker": "Sign In or Sign Up to access the Streak Counter!",
+    "streak": {
+      "YOURSTREAK": "YOUR STREAK",
+      "YOURGOAL": "YOUR GOAL",
+      "days": "Days",
+      "day": "Day",
+      "months": "Months",
+      "month": "Month",
+      "years": "Years",
+      "year": "Year"
+    },
+    "content": {
+      "find_a_breathing_exercise_to_practice": "Find a breathing exercise to practice"
+    },
+    "stress_control_using_breathing_exercises": "Stress control using breathing exercises.",
+    "stress_control_using_breathing_exercises_content": "<p class=\"indent\">The breathing exercises are tools that can be used all day. They are easy to do and really useful in a lot of situations in our life, helping us to be calm and relax.</p><br><br><p class=\"indent\">In a study from the Faculty of Psychology in Beijing, China, a experiment was made with 40 people for 8 weeks to test the efficiency of the breathing exercises in the stress reduction. Twenty of these people received intensive training with breathing techniques. And at the end of this study, the group that received the training showed a decreased level of cortisol(stress hormone), compared to the group that did not receive the training.</p><br><br><p class=\"indent\">We can also see the meditation and yoga exercises that use breathing to increase the efficiency in their practices, and most of the time, these exercises are focused on the reduction of stress and anxiety. Others also focus on the sleep quality, helping the user to sleep better or to reduce insomnia.</p><br><br><p class=\"indent\">Practicing breathing exercises frequently can help us in the stressful days, when our body and mind cant stand all these stressful charges the day impose on us. A short time practicing a breathing exercise can give us the gas to stand all stressful activities, and finish the day less stressed, more relaxed and satisfied with our efforts.</p><br><br>",
+    "learn_more_about_breathing_exercises_benefits": "Learn more about Breathing Exercises benefits",
+    "china_study_name": "Study from Faculty of Psychology in Beijing, China",
+    "references": "References",
+    "click_to_see_more": "Click to see more"
+  },
+  "breathing": {
+    "details": {
+      "what_is": "What is",
+      "inhale_for": "Inhale for",
+      "hold_for": "Hold for",
+      "exhale_for": "Exhale for",
+      "take_a_rest_for": "Take a rest for",
+      "the_breathing_will_repeat": "The breathing will repeat",
+      "times": "times",
+      "return": "Return",
+      "start_practice": "Start Practice"
+    },
+    "practice": {
+      "breaths_to_go": "breaths to go",
+      "return_to_see_other_breathings": "Return to see other Breathings",
+      "your_breathing_session_is_complete": "Your breathing session is complete",
+      "i_hope_you_are_feeling_better": "I hope you are feeling better",
+      "inhale_for": "Inhale for",
+      "hold_for": "Hold for",
+      "exhale_for": "Exhale for",
+      "take_a_rest_for": "Take a rest for",
+      "breathing_starting_in": "Breathing starting in",
+      "your_exercice_has_been_successfully_registered": "Your breathing session has been successfully registered!"
+    }
+  },
+  "settings": {
+    "settings": "Settings",
+    "sync_your_data_with_google": "Sync your data with google",
+    "set_your_breathing_streak_goal": "Set your breathing streak goal",
+    "set_here_your_streak_goal": "Set here your streak goal",
+    "not_working_yet": "Not working yet",
+    "numbers_of_days": "Numbers of days",
+    "change_your_app_language": "Change your app language",
+    "allow_vibration": "Allow vibration feedback",
+    "enable_dark_mode": "Enable dark mode"
+  },
+  "profile": {
+    "profile": "Your profile",
+    "your_new_goal_has_been_successfully_changed": "Your new goal has been successfully changed!",
+    "enter_your_new_goal": "Enter your new goal *",
+    "enter_the_value": "Enter the value",
+    "save_the_new_goal": "Save the new goal",
+    "days": "Days",
+    "more_than_x_days": "{days} days or more",
+    "of_the_streak": "of the streak",
+    "awards_that_your_will_recieve": "Awards that you will receive when you reach",
+    "you_will_recieve": "You will receive"
+  },
+  "auth": {
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "sign_out": "Sign Out",
+    "forgot-password": {
+      "forgot_password": "Forgot password?",
+      "what_is_your_email": "What is your email?",
+      "your_email": "Your email...",
+      "recover_password": "Recover password"
+    },
+    "reset-password": {
+      "reset_your_password": "Reset your password",
+      "what_is_your_new_password": "What is your new password?",
+      "your_password": "Your password...",
+      "reset_password": "Reset password"
+    },
+    "next-step-forgot-password": {
+      "access_your_email_to_see_the_reset_link": "Access your email to see the reset link",
+      "go_to_login_page": "Go to login page"
+    },
+    "sign-in": {
+      "sign_in_to": "Sign in to",
+      "what_is_your_email": "What is your email?",
+      "your_email": "Your email...",
+      "what_is_your_password": "What is your password?",
+      "your_password": "Your password...",
+      "does_not_have_an_account_create_one": "Does not have an account, create one.",
+      "forgot_your_password": "Forgot your password?"
+    },
+    "sign-up": {
+      "sign_up_to": "Sign up to",
+      "what_is_your_email": "What is your email?",
+      "your_email": "Your email...",
+      "what_is_your_name": "What is your name?",
+      "your_name": "Your name...",
+      "what_is_your_password": "What is your password?",
+      "your_password": "Your password...",
+      "already_have_an_account_access_it": "Already have an account, access it."
+    }
+  },
+  "report-or-feedback": {
+    "report_error_or_give_a_feedback": "Report errors or give a feedback",
+    "your_message_has_been_succcessfully_sent": "Your message has been succcessfully sent!",
+    "thank_you_for_help-the_GBreath_to_be_better_1": "Thank you for help the GBreath to be better! Soon you will receive an answer about your message in your email!",
+    "thank_you_for_help-the_GBreath_to_be_better_2": "Thank you for help the GBreath to be better! Your message will be read soon!",
+    "what_is_your_name": "What is your name? *",
+    "what_is_your_email": "What is your email? (optional)",
+    "what_is_your_message": "What is your message? *",
+    "type_here": "Type here",
+    "type_here_if_you_want_an_answer_of_your_feedback": "Type here if you want an answer of your feedback",
+    "type_here_what_is_your_opinion_sugestions_bug_etc": "Type here what is your opinion, sugestions, bug, etc..."
+  },
+  "alerts": {
+    "signing": "Signing...",
+    "creating_account": "Creating account...",
+    "sending_a_reset_email": "Sending a reset email...",
+    "loading_data": "Loading data...",
+    "changing_data": "Changing data...",
+    "reseting_password": "Reseting password...",
+    "saving_data": "Saving data...",
+    "sending_message": "Sending message...",
+    "looking_for_how_to_change_your_goal": "Change your goal here!",
+    "do_you_really_want_signout": "Do you really want to Sign Out?",
+    "report_errors_or_give_feedback": "Report errors or give a feedback.",
+    "contribute_to_the_project_here": "Contribute to the project",
+    "if_you_leave_now_that_session_will_not_be_recorded_in_your_streak": "If you leave now, that session will not be recorded in your streak!",
+    "do_you_really_want_to_leave": "Do you really want to leave?"
+  },
+  "buttons": {
+    "yes_sign_out": "Yes, Sign Out!",
+    "yes_leave": "Yes, Leave!",
+    "cancel": "Cancel",
+    "return": "Return",
+    "send_message": "Send message",
+    "close": "Close"
+  },
+  "awards": {
+    "awards_overview": "Awards overview",
+    "your_current_award": "Your current award",
+    "your_next_award": "Your next award",
+    "no-award": "First steps",
+    "change-goal": "Increase your goal to get more awards!",
+    "bronze-medal": "Bronze Medal",
+    "silver-medal": "Silver Medal",
+    "gold-medal": "Gold Medal",
+    "bronze-trophy": "Bronze Trophy",
+    "silver-trophy": "Silver Trophy",
+    "gold-trophy": "Gold Trophy",
+    "diamond-trophy": "Diamond Trophy",
+    "crown": "Crown"
+  },
+  "privacy_policy": "Privacy Policy",
+  "terms_of_service": "Terms of Service",
+  "see_our": "See our",
+  "and": "and"
+}

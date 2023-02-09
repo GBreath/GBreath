@@ -1,0 +1,30 @@
+{
+  "ensure-authenticated": {
+    "you_must_to_be_loggedin_to_make_this_action": "You must to be loggedin to make this action!",
+    "probabily_your_user_has_been_deleted": "Probabily your user has been deleted or unactive, contact the admin to solve that.",
+    "you_are_not_allowed_to_do_this_action": "You are not allowed to do this action!"
+  },
+  "auth": {
+    "email_or_password_went_wrong": "Email or password went wrong!",
+    "this_email_is_already_in_use": "This email is already in use by another account!",
+    "this_user_does_not_exists": "This user does not exists in our database or it was deleted!",
+    "this_link_probably_has_been": "This link probably has been expired or not exists!",
+    "reset_password": "Reset password",
+    "click_in_the_link_below": "Click in the link below to reset your password!",
+    "the_link_below_expires_in_one_hour": "The link below expires in one hour.",
+    "this_google_account_does_not_has_an_email_or_name": "This google account does not has an email or name!",
+    "sorry_the_server_is_not_accepting_google_sign_in": "Sorry the server is not accepting Google Sign In!",
+    "forgot-password": {
+      "an_email_with_a_reset_link_was_sent_to_your_mail": "An email with a reset link was sent to your mail!"
+    },
+    "reset-password": {
+      "your_password_has_been_successfully_reseted": "Your password has been successfully reseted. Try to login now!"
+    }
+  },
+  "goal": {
+    "there_is_not_goal_to_this_date": "There is not goal to this date!"
+  },
+  "alerts": {
+    "too_many_requests": "Too many following requests. Calm down!"
+  }
+}

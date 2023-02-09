@@ -1,0 +1,26 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.remove-user-interaction {
+  pointer-events: none;
+}
+
+.logo {
+  font-family: "Fredoka One", cursive;
+}
