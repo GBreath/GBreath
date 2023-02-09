@@ -23,5 +23,8 @@
   },
   "goal": {
     "there_is_not_goal_to_this_date": "There is not goal to this date!"
+  },
+  "alerts": {
+    "too_many_requests": "Too many following requests. Calm down!"
   }
 }

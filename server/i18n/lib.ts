@@ -1,18 +1,21 @@
 import { locales } from "./locales";
 
+let lang: null | string = null;
 const fallbackLang = "en";
 
-let lang = "en";
-
 export const setLang = (_lang: string) => {
-  if (Object.keys(locales).includes(_lang)) {
+  if ((Object.keys(locales).includes(_lang) && !lang) || lang !== _lang) {
     lang = _lang;
     return;
   }
 
-  lang = "en";
+  if (!lang) {
+    lang = fallbackLang;
+  }
+};
 
-  return;
+export const getLang = () => {
+  return lang;
 };
 
 // $st stands for $serverTranslation
@@ -20,12 +23,12 @@ export const $st = (string: string) => {
   const tokenize = string.split(".");
 
   if (!tokenize.length) {
-    return locales[lang];
+    return locales[lang || fallbackLang];
   } else {
-    const res = getDescendantProp(locales[lang], string);
+    const res = getDescendantProp(locales[lang || fallbackLang], string);
     const fallbackRes = getDescendantProp(locales[fallbackLang], string);
 
-    return res ? res : fallbackRes ? fallbackRes : string;
+    return res || fallbackRes || string;
   }
 };
 

@@ -23,5 +23,8 @@
   },
   "goal": {
     "there_is_not_goal_to_this_date": "Não exite objetivos nessa data!"
+  },
+  "alerts": {
+    "too_many_requests": "Muitas requisições seguidas. Vai com calma!"
   }
 }
