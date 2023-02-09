@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Test project ${{ matrix.node-version }}
         uses: actions/setup-node@v2
-        with:x
+        with:
           node-version: ${{ matrix.node-version }}
       - run: echo "Installing all dependencies"
       - run: yarn install
