@@ -12,7 +12,7 @@ describe("Testing the CurrentStreak useCase", () => {
   inMemoryDB.goals.push(
     new Goal({
       userId: "abc",
-      days: 6,
+      days: 8,
     })
   );
 
@@ -35,6 +35,12 @@ describe("Testing the CurrentStreak useCase", () => {
       userId: "abc",
       createdAt: moment().add(-3, "day").add(12, "hour").toDate(),
     },
+    {
+      exerciceIndex: 0,
+      repetitions: 16,
+      userId: "abc",
+      createdAt: moment().add(-4, "day").add(12, "hour").toDate(),
+    },
   ].reverse();
 
   it("Should return the streak with 3 days, the goal as 6, and progress as 50%", async () => {
@@ -44,9 +50,9 @@ describe("Testing the CurrentStreak useCase", () => {
       userId: "abc",
     });
 
-    expect(result.goal).toEqual(6);
-    expect(result.streak).toEqual(3);
+    expect(result.goal).toEqual(8);
+    expect(result.streak).toEqual(4);
     expect(result.progress).toEqual(50);
-    expect(result.award).toEqual("gold-medal-40p");
+    expect(result.award).toEqual("silver-medal");
   });
 });
