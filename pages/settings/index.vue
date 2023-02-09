@@ -91,5 +91,16 @@ const authStore = useAuthStore();
       <iconify-icon icon="mdi:github" width="28"></iconify-icon>
       {{ $t("alerts.contribute_to_the_project_here") }}
     </a>
+
+    <span>
+      {{ $t("see_our") }}
+      <nuxt-link to="privacy-policy" class="link link-info">
+        {{ $t("privacy_policy") }}
+      </nuxt-link>
+      {{ $t("and") }}
+      <nuxt-link to="terms-of-service" class="link link-info">
+        {{ $t("terms_of_service") }} </nuxt-link
+      >.
+    </span>
   </div>
 </template>

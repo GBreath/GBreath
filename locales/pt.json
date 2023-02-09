@@ -133,7 +133,7 @@
     "looking_for_how_to_change_your_goal": "Altere seu objetivo aqui!",
     "do_you_really_want_signout": "Você realmente deseja encerrar a sessão?",
     "report_errors_or_give_feedback": "Reporte erros ou deixe um feedback.",
-    "contribute_to_the_project_here": "Contribua com o projeto aqui!",
+    "contribute_to_the_project_here": "Contribua com o projeto",
     "if_you_leave_now_that_session_will_not_be_recorded_in_your_streak": "Se sair agora, essa sessão não será registrada no seu progresso!",
     "do_you_really_want_to_leave": "Realmente deseja sair?"
   },
@@ -159,5 +159,9 @@
     "gold-trophy": "Troféu de ouro",
     "diamond-trophy": "Troféu de diamente",
     "crown": "Coroa"
-  }
+  },
+  "privacy_policy": "Política de privacidade",
+  "terms_of_service": "Termos de Serviço",
+  "see_our": "Veja nossa",
+  "and": "e"
 }

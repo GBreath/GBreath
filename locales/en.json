@@ -133,7 +133,7 @@
     "looking_for_how_to_change_your_goal": "Change your goal here!",
     "do_you_really_want_signout": "Do you really want to Sign Out?",
     "report_errors_or_give_feedback": "Report errors or give a feedback.",
-    "contribute_to_the_project_here": "Contribute to the project here!",
+    "contribute_to_the_project_here": "Contribute to the project",
     "if_you_leave_now_that_session_will_not_be_recorded_in_your_streak": "If you leave now, that session will not be recorded in your streak!",
     "do_you_really_want_to_leave": "Do you really want to leave?"
   },
@@ -159,5 +159,9 @@
     "gold-trophy": "Gold Trophy",
     "diamond-trophy": "Diamond Trophy",
     "crown": "Crown"
-  }
+  },
+  "privacy_policy": "Privacy Policy",
+  "terms_of_service": "Terms of Service",
+  "see_our": "See our",
+  "and": "and"
 }
